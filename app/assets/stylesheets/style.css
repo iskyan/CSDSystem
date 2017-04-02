@@ -1,0 +1,95 @@
+body {
+   height: auto;
+   background-color: azure;
+}
+div {
+   display: block;
+}
+.navbar {
+   background-color: #d8dfea;
+}
+.csd-text{
+   background-color: #2a415f;
+   margin-top: -20px;
+   text-align: center;
+   height: 120px;
+   transition: all 0.4s ease;
+}
+.csd-text-hidden{
+   margin-top: -120px;
+   text-align: center;
+   height: 120px;
+   transition: all 0.4s ease;
+}
+.csd-text-hidden h1{
+   height: 0px;
+   visibility: hidden;
+}
+.csd-text h1{
+   font-family: fantasy;
+   line-height: 50px;
+   color: aliceblue;
+   transition: all 0.4s ease;
+}
+.title-text{
+   text-align: center;
+}
+.lang-btn {
+   color: aliceblue;
+   background-color: #2a415f;
+   display: inline-block;
+   background: #2a415f;
+   float: left;
+   text-align: center;
+   width: 30px;
+   height: 30px;
+   margin: 10px 3px;
+   padding: 4px 0px;
+   border-radius: 20px;
+   font-weight: bold;
+}
+.lang-btn:hover {
+   box-shadow: 0px 0px 2px 2px #888888;
+   color: aliceblue;
+   text-decoration: none;
+}
+.logo {
+   margin-top: 25px;
+   margin-left: -40px;
+}
+.con-car {
+   margin-top: 160px;
+}
+.content{
+   margin-top: 150px;
+}
+.row-content {
+   margin-bottom: 50px;
+}
+.par-content {
+   margin-bottom: 150px;
+}
+.footer {
+   position: static;
+   height:50px;
+   background-color: #2a415f;
+   bottom:0px;
+   left:0px;
+   right:0px;
+   margin-bottom:0px;
+   color: aliceblue;
+}
+.footer-text {
+   padding-top: 15px;
+}
+.con-tab {
+    padding-top: 120px;
+    margin-top: 50px;
+}
+.help-link{
+   width: 128px;
+   height: 128px;
+}
+.content-source {
+   margin-top: 150px;
+}

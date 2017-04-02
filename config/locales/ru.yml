@@ -1,0 +1,43 @@
+ru:
+  first:
+    academics: "Занятия"
+    undergraduateProgram: "Бакалавр Программа"
+    graduateProgram: "Магистр Программа"
+    courses: "Курсы"
+    programObjectives: "Программы"
+    calendar: "Календарь"  
+  second:
+    facultyResearch: "Факуьтеты & Исседования"
+    graduateResearch: "Магистратура Исследования"
+    researchInterest: "Исследования"
+    centersInitiatives: "Центры & Инициативы"
+    undergraduateResearch: "Бакалавриат Исследования"
+    masterworks: "Дипломные Работы"
+  third:
+    admission: "Администрация"
+    masterDegree: "Магистратура"
+    bachelorDegree: "Бакалавриат"
+    college: "Колледж"
+    tutionFee: "Плата за обуччение"
+    exchangeProgram: "Программа обмена"
+    foreignStudents: "Иностранные Студенты"
+  four:
+    people: "Сообщество"
+    facultyAdvisors: "Факультеты & Кураторы"
+    alumni: "Персонал"
+    studentGroups: "Группы"
+    lecturers: "Лекторы"
+    prospectiveStudents: "Будущие Студенты"
+  five:
+    officesServices: "Офис & Усуги"
+    academicPrograms: "Академические Программы"
+    humanResource: "Отдел Кадров"
+    officeOfDean: "Деконат"
+    exchange: "Программа Обмена"
+    contacts: "Контакты"
+  six:
+    newsEvents: "Новости и События"
+    calendarColloquia: "Каендари & Коллоквиумы"
+    forTheMedia: "Для Средств Массовой Информации"
+    announcments: "Объявления"
+  login: "Логин"
