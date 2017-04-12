@@ -13,7 +13,4 @@ class AdmissionController < ApplicationController
 
   def master_degree
   end
-
-  def tution_fee
-  end
 end

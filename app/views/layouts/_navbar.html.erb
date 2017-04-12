@@ -32,23 +32,7 @@
                     <li class="divider"></li>
                     <li><%= link_to t('first.courses'), academics_courses_path %></li>
                     <li class="divider"></li>
-                    <li><%= link_to t('first.programObjectives'), academics_program_objectives_path %></li>
-                    <li class="divider"></li>
                     <li><%= link_to t('first.calendar'), academics_calendar_path %></li>
-                 </ul>
-              </li>
-              <li class="dropdown">
-                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= t "second.facultyResearch" %><b class="caret"></b></a>
-                 <ul class="dropdown-menu">
-                    <li><%= link_to t('second.graduateResearch'), faculty_research_graduate_research_path %></li>
-                    <li class="divider"></li>
-                    <li><%= link_to t('second.researchInterest'), faculty_research_research_interests_path %></li>
-                    <li class="divider"></li>
-                    <li><%= link_to t('second.centersInitiatives'), faculty_research_centers_initiatives_path %></li>
-                    <li class="divider"></li>
-                    <li><%= link_to t('second.undergraduateResearch'), faculty_research_undergraduate_research_path %></li>
-                    <li class="divider"></li>
-                    <li><%= link_to t('second.masterworks'), faculty_research_masterworks_path %></li>
                  </ul>
               </li>
               <li class="dropdown">
@@ -59,8 +43,6 @@
                     <li><%= link_to t('third.bachelorDegree'), admission_bachalor_degree_path %></li>
                     <li class="divider"></li>
                     <li><%= link_to t('third.college'), admission_college_path %></li>
-                    <li class="divider"></li>
-                    <li><%= link_to t('third.tutionFee'), admission_tution_fee_path %></li>
                     <li class="divider"></li>
                     <li><%= link_to t('third.exchangeProgram'), admission_exchange_program_path %></li>
                     <li class="divider"></li>
@@ -79,37 +61,35 @@
                     <li><%= link_to t('four.lecturers'), people_lecturers_path %></li>
                     <li class="divider"></li>
                     <li><%= link_to t('four.prospectiveStudents'), people_prospective_students_path %></li>
-                 </ul>
-              </li>
-              <li class="dropdown">
-                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= t "five.officesServices" %><b class="caret"></b></a>
-                 <ul class="dropdown-menu">
-                    <li><%= link_to t('five.academicPrograms'), offices_services_academic_programs_path %></li>
                     <li class="divider"></li>
-                    <li><%= link_to t('five.humanResource'), offices_services_human_resource_path %></li>
-                    <li class="divider"></li>
-                    <li><%= link_to t('five.officeOfDean'), offices_services_office_of_dean_path %></li>
-                    <li class="divider"></li>
-                    <li><%= link_to t('five.exchange'), offices_services_exchange_path %></li>
-                    <li class="divider"></li>
-                    <li><%= link_to t('five.contacts'), offices_services_contacts_path %></li>
+                    <li><%= link_to t('four.officeOfDean'), people_office_of_dean_path %></li>
                  </ul>
               </li>
               <li class="dropdown">
                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= t "six.newsEvents" %><b class="caret"></b></a>
                  <ul class="dropdown-menu">
-                    <li><%= link_to t('six.calendarColloquia'), news_events_calendars_colloquia_path %></li>
+                    <li><%= link_to t('six.calendarColloquia'), academics_calendar_path %></li>
                     <li class="divider"></li>
-                    <li><%= link_to t('six.forTheMedia'), news_events_for_media_path %></li>
+                    <li><%= link_to t('six.forTheMedia'), news_events_news_path %></li>
                     <li class="divider"></li>
                     <li><%= link_to t('six.announcments'), news_events_announcements_path %></li>
                  </ul>
               </li>
+              <li class="dropdown">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= t "second.about" %><b class="caret"></b></a>
+                 <ul class="dropdown-menu">
+                    <li><%= link_to t('second.contacts'), about_contacts_path %></li>
+                    <li class="divider"></li>
+                    <li><%= link_to t('second.systemInformation'), about_system_information_path %></li>
+                 </ul>
+              </li>
            </ul>
-           <div class="services">
+           <div>
               <form lang="en" action="" class="navbar-right">
                  <p class="lang-btn" ><%= link_to_unless_current "EN", locale: "en" %></p>
                  <p class="lang-btn" ><%= link_to_unless_current "RU", locale: "ru" %></p>
+                 <%= button_to 'Login', home_index_path, class: 'btn btn-success navbar-right login-btn' %>
+                 <!-- <button type="button" class="btn btn-success navbar-right login-btn">Login</button> -->
               </form>
            </div>
        </div>

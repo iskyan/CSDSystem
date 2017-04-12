@@ -13,4 +13,7 @@ class PeopleController < ApplicationController
 
   def students_groups
   end
+
+  def office_of_dean
+  end
 end

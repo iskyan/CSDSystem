@@ -25,21 +25,16 @@ en:
     undergraduateProgram: "Undergraduate Program"
     graduateProgram: "Graduate Program"
     courses: "Courses"
-    programObjetives: "Program Objectives"
     calendar: "Calendar"
   second:
-    facultyResearch: "Faculty & Research"
-    graduateResearch: "Graduate Research"
-    researchInterest: "Research Interest"
-    centersInitiatives: "Centers & Initiatives"
-    undergraduateResearch: "Undergraduate Research"
-    masterworks: "Masterworks"
+    about: "About"
+    contacts: "How to find us?"
+    systemInformation: "System Information"
   third:
     admission: "Admission"
     masterDegree: "Master Degree"
     bachelorDegree: "Bachelor Degree"
     college: "College"
-    tutionFee: "Tution Fee"
     exchangeProgram: "Exchange Program"
     foreignStudents: "Foreign Students"
   four:
@@ -49,6 +44,7 @@ en:
     studentGroups: "Student Groups"
     lecturers: "Lecturers"
     prospectiveStudents: "Porspective Students"
+    officeOfDean: "Office Of Dean"
   five:
     officesServices: "Offices & Services"
     academicPrograms: "Academic Programs"
@@ -58,7 +54,7 @@ en:
     contacts: "Contacts"
   six:
     newsEvents: "News & Events"
-    calendarColloquia: "Calendar & Colloquia"
-    forTheMedia: "For the Media"
+    calendarColloquia: "Calendar"
+    forTheMedia: "News"
     announcments: "Announcments"
   login: "Login"

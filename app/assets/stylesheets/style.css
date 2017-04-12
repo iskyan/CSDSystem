@@ -48,6 +48,14 @@ div {
    border-radius: 20px;
    font-weight: bold;
 }
+.login-btn {
+   display: inline-block;
+   text-align: center;
+   height: 25px;
+   margin-top: 10px;
+   margin-left: 25px;
+   padding-bottom: 25px;
+}
 .lang-btn:hover {
    box-shadow: 0px 0px 2px 2px #888888;
    color: aliceblue;
