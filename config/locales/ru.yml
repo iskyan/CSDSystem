@@ -36,4 +36,6 @@ ru:
     calendarColloquia: "Каендари"
     forTheMedia: "Новости"
     announcments: "Объявления"
-  login: "Логин"
+  seven:
+    login: "ВОЙТИ"
+    authorization: "Авторизация"
