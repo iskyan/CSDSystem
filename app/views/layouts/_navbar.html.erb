@@ -3,13 +3,13 @@
      <%= image_tag("cs.png", class: "logo", size: "200x90",  :alt => "CS LOGO") %>
   </div>
   <div class="col-sm-6 csd-text">
-     
+
   </div>
   <div class="col-sm-2 csd-text">
      <%= image_tag("logo.svg.svg", class: "logo", size: "90x90",  :alt => "University logo") %>
   </div>
     <div class="container">
-  
+
        <div class="navbar-header">
            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
                <span class="sr-only">Открыть навигацию</span>
@@ -88,6 +88,8 @@
               <form lang="en" action="" class="navbar-right">
                  <p class="lang-btn" ><%= link_to_unless_current "EN", locale: "en" %></p>
                  <p class="lang-btn" ><%= link_to_unless_current "RU", locale: "ru" %></p>
+                 <p class="lang-btn"> <%= link_to  "Login", new_profile_session_path ,  locale: "en" %> </p>
+                  <p class="lang-btn"> <%= link_to "Logout", destroy_profile_session_path , method: :delete %> </p>
                  <button class="btn btn-success navbar-right login-btn" type="button" data-toggle="modal" data-target="#modal-1"><%= t "seven.login" %></button>
               </form>
            </div>

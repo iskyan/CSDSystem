@@ -1,6 +1,7 @@
 class Profile < ApplicationRecord
   before_create :set_default_role
   has_many :work_experiences
+  has_one :skill
   # belongs_to :profile_roles
 
   # Include default devise modules. Others available are:

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170427082457) do
+ActiveRecord::Schema.define(version: 20170427094431) do
 
   create_table "profile_roles", force: :cascade do |t|
     t.string   "role"
@@ -43,6 +43,16 @@ ActiveRecord::Schema.define(version: 20170427082457) do
     t.index ["email"], name: "index_profiles_on_email", unique: true
     t.index ["profile_role_id"], name: "index_profiles_on_profile_role_id"
     t.index ["reset_password_token"], name: "index_profiles_on_reset_password_token", unique: true
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string   "organizational_skill"
+    t.string   "publicaton"
+    t.string   "project"
+    t.integer  "profile_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.index ["profile_id"], name: "index_skills_on_profile_id"
   end
 
   create_table "work_experiences", force: :cascade do |t|

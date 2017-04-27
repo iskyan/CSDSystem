@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :skills
   devise_for :profiles do
     resources :work_experiences
   end
