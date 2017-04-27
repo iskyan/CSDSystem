@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  devise_for :profiles
+  devise_for :profiles do
+    resources :work_experiences
+  end
   resources :profile_roles
   scope "(:locale)",locale: /en|ru/ do
 
@@ -31,6 +33,6 @@ Rails.application.routes.draw do
     get 'home/index'
     root 'home#index'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html 
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   end
 end
