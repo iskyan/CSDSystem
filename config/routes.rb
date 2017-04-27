@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :profiles
   resources :profile_roles
   scope "(:locale)",locale: /en|ru/ do
 
