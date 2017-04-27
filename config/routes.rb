@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  resources :educations
+  resources :skills
+  resources :work_experiences
+  resources :profile_roles
+  devise_for :profiles
+
   scope "(:locale)",locale: /en|ru/ do
 
     get 'people/alumni'
@@ -29,6 +35,6 @@ Rails.application.routes.draw do
     get 'home/index'
     root 'home#index'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html 
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   end
 end
