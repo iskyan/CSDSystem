@@ -17,7 +17,11 @@ class SkillsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create skill" do
     assert_difference('Skill.count') do
+<<<<<<< HEAD
       post skills_url, params: { skill: { organizational_skill: @skill.organizational_skill, profile_id: @skill.profile_id, project: @skill.project, publicaton: @skill.publicaton } }
+=======
+      post skills_url, params: { skill: {  } }
+>>>>>>> master
     end
 
     assert_redirected_to skill_url(Skill.last)
@@ -34,7 +38,11 @@ class SkillsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update skill" do
+<<<<<<< HEAD
     patch skill_url(@skill), params: { skill: { organizational_skill: @skill.organizational_skill, profile_id: @skill.profile_id, project: @skill.project, publicaton: @skill.publicaton } }
+=======
+    patch skill_url(@skill), params: { skill: {  } }
+>>>>>>> master
     assert_redirected_to skill_url(@skill)
   end
 

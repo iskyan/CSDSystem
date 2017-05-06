@@ -69,6 +69,10 @@ class WorkExperiencesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def work_experience_params
+<<<<<<< HEAD
       params.require(:work_experience).permit(:work_period, :position, :place, :profile_id)
+=======
+      params.fetch(:work_experience, {})
+>>>>>>> master
     end
 end

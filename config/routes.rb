@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+<<<<<<< HEAD
   resources :skills
 
   get 'profile/edit'
@@ -19,6 +20,13 @@ Rails.application.routes.draw do
   resources :work_experiences
 
   resources :profile_roles
+=======
+  resources :educations
+  resources :skills
+  resources :work_experiences
+  resources :profile_roles
+  devise_for :profiles
+>>>>>>> master
 
   scope "(:locale)",locale: /en|ru/ do
 

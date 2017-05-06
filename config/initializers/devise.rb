@@ -1,6 +1,7 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+<<<<<<< HEAD
 
   #config.cas_base_url = "http://localhost:8080/casold"
 
@@ -11,12 +12,18 @@ Devise.setup do |config|
         logger: Rails.logger
   }
 
+=======
+>>>>>>> master
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
+<<<<<<< HEAD
   # config.secret_key = 'a7b49a0074525e7ec32f4f72ce827e779449ee9ce9950f775d8e07b1e092301be9ec7dc6b71c114354b8409b7c1be37b4d7e6f45f7d9775d66ddbdf301fd4df8'
+=======
+  # config.secret_key = '92f0dd26228a1a71d564fb14cdc47bb100c2ed2fa794031582b38d19314b972f86baa8b5b9443f6795fd34995b66539da619e7f52e2e156cb332eb7950483b50'
+>>>>>>> master
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -118,7 +125,11 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
+<<<<<<< HEAD
   # config.pepper = 'd6873e3502132e4d4688ac1bee2fc9c1fa23e8e4e47f11a37fbf49e2a806f27ecfd3a8227a504e7f62728c8453a22794ec7ab4405e6fad1b1daf31a25d79c4ca'
+=======
+  # config.pepper = '55a872cbb74bd3084fa53d1b07c77e8cfb6eb2f0a64480f1dc9c602143f0bd58cb135447281ce1b708aa20c7ece15a9e9d13247b99dfadbf9d3d3803e9efa83d'
+>>>>>>> master
 
   # Send a notification email when the user's password is changed
   # config.send_password_change_notification = false
