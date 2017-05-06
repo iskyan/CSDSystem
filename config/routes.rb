@@ -1,13 +1,7 @@
 Rails.application.routes.draw do
 
-<<<<<<< HEAD
   resources :skills
-<<<<<<< HEAD
-  devise_for :profiles do
-    resources :work_experiences
-  end
   resources :profile_roles
-=======
 
   get 'profile/edit'
   get 'profile/dashboard'
@@ -25,16 +19,11 @@ Rails.application.routes.draw do
 
   resources :work_experiences
 
-  resources :profile_roles
-=======
   resources :educations
   resources :skills
   resources :work_experiences
   resources :profile_roles
-  devise_for :profiles
->>>>>>> master
-
->>>>>>> fcc68e4fc2ae3fa4c1f66d7d3818648246e49b45
+  
   scope "(:locale)",locale: /en|ru/ do
 
     get 'people/alumni'
