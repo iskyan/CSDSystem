@@ -1,0 +1,37 @@
+<%= form_for(skill) do |f| %>
+  <% if skill.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(skill.errors.count, "error") %> prohibited this skill from being saved:</h2>
+
+      <ul>
+      <% skill.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :organizational_skill %>
+    <%= f.text_field :organizational_skill %>
+  </div>
+
+  <div class="field">
+    <%= f.label :publicaton %>
+    <%= f.text_field :publicaton %>
+  </div>
+
+  <div class="field">
+    <%= f.label :project %>
+    <%= f.text_field :project %>
+  </div>
+
+  <div class="field">
+    <%= f.label :profile_id %>
+    <%= f.text_field :profile_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

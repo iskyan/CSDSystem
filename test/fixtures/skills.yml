@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  organizational_skill: MyString
+  publicaton: MyString
+  project: MyString
+  profile: one
+
+two:
+  organizational_skill: MyString
+  publicaton: MyString
+  project: MyString
+  profile: two

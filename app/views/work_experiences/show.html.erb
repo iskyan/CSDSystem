@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Work period:</strong>
+  <%= @work_experience.work_period %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @work_experience.position %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @work_experience.place %>
+</p>
+
+<p>
+  <strong>Profile:</strong>
+  <%= @work_experience.profile %>
+</p>
+
+<%= link_to 'Edit', edit_work_experience_path(@work_experience) %> |
+<%= link_to 'Back', work_experiences_path %>
