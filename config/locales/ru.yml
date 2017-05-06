@@ -4,7 +4,7 @@ ru:
     undergraduateProgram: "Бакалавр Программа"
     graduateProgram: "Магистр Программа"
     courses: "Курсы"
-    calendar: "Календарь"  
+    calendar: "Календарь"
   second:
     about: "О нас"
     contacts: "Как найти нас?"
@@ -38,4 +38,5 @@ ru:
     announcments: "Объявления"
   seven:
     login: "ВОЙТИ"
+    logout: "Logout"
     authorization: "Авторизация"

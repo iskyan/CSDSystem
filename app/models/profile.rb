@@ -10,8 +10,10 @@ class Profile < ApplicationRecord
   # devise :database_authenticatable, :registerable,
   #        :recoverable, :rememberable, :trackable, :validatable
 
+
   def cas_extra_attributes=(extra_attributes)
      extra_attributes.each do |name, value|
+       puts "DEBUG: cas_extra_attributes CALLED"
        puts "extra_attributes:"+ name.to_s+" => "+ value.to_s
        case name.to_sym
        when :fullname
@@ -20,10 +22,11 @@ class Profile < ApplicationRecord
          self.email = value
        end
      end
-   end
+  end
 
    private
    def set_default_role
+     puts "DEBUG: PROFILE ROLE SET"
      puts ProfileRole.find_by_role("admin").id
      self.profile_role_id ||= ProfileRole.find_by_role('admin').id
    end

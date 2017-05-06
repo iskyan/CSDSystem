@@ -58,5 +58,6 @@ en:
     forTheMedia: "News"
     announcments: "Announcments"
   seven:
-    login: "LOG IN"
+    login: "Login"
+    logout: "Logout"
     authorization: "Authorization"

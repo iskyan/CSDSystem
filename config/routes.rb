@@ -1,10 +1,25 @@
 Rails.application.routes.draw do
 
   resources :skills
-  devise_for :profiles do
-    resources :work_experiences
-  end
+
+  get 'profile/edit'
+  get 'profile/dashboard'
+
+  # Rails.application.routes.draw do
+  #       devise_for :users, controllers: {
+  #         sessions: 'users/sessions'
+  #       }
+  #     end
+
+
+  devise_for :profiles, controllers: {
+    sessions: 'profiles/sessions'
+  }
+
+  resources :work_experiences
+
   resources :profile_roles
+
   scope "(:locale)",locale: /en|ru/ do
 
     get 'people/alumni'
