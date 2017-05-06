@@ -58,11 +58,6 @@ en:
     forTheMedia: "News"
     announcments: "Announcments"
   seven:
-<<<<<<< HEAD
-    login: "LOG IN"
-    authorization: "Authorization"
-=======
     login: "Login"
     logout: "Logout"
     authorization: "Authorization"
->>>>>>> fcc68e4fc2ae3fa4c1f66d7d3818648246e49b45

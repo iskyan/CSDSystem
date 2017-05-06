@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   resources :skills
   resources :work_experiences
   resources :profile_roles
-  
+
   scope "(:locale)",locale: /en|ru/ do
 
     get 'people/alumni'
