@@ -17,7 +17,11 @@ class WorkExperiencesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create work_experience" do
     assert_difference('WorkExperience.count') do
+<<<<<<< HEAD
       post work_experiences_url, params: { work_experience: { place: @work_experience.place, position: @work_experience.position, profile_id: @work_experience.profile_id, work_period: @work_experience.work_period } }
+=======
+      post work_experiences_url, params: { work_experience: {  } }
+>>>>>>> master
     end
 
     assert_redirected_to work_experience_url(WorkExperience.last)
@@ -34,7 +38,11 @@ class WorkExperiencesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update work_experience" do
+<<<<<<< HEAD
     patch work_experience_url(@work_experience), params: { work_experience: { place: @work_experience.place, position: @work_experience.position, profile_id: @work_experience.profile_id, work_period: @work_experience.work_period } }
+=======
+    patch work_experience_url(@work_experience), params: { work_experience: {  } }
+>>>>>>> master
     assert_redirected_to work_experience_url(@work_experience)
   end
 

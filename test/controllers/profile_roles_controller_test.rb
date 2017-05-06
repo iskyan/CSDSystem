@@ -17,7 +17,11 @@ class ProfileRolesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create profile_role" do
     assert_difference('ProfileRole.count') do
+<<<<<<< HEAD
       post profile_roles_url, params: { profile_role: { role: @profile_role.role } }
+=======
+      post profile_roles_url, params: { profile_role: {  } }
+>>>>>>> master
     end
 
     assert_redirected_to profile_role_url(ProfileRole.last)
@@ -34,7 +38,11 @@ class ProfileRolesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update profile_role" do
+<<<<<<< HEAD
     patch profile_role_url(@profile_role), params: { profile_role: { role: @profile_role.role } }
+=======
+    patch profile_role_url(@profile_role), params: { profile_role: {  } }
+>>>>>>> master
     assert_redirected_to profile_role_url(@profile_role)
   end
 

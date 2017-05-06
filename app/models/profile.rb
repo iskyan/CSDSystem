@@ -1,4 +1,5 @@
 class Profile < ApplicationRecord
+<<<<<<< HEAD
   before_create :set_default_role
   has_many :work_experiences
   has_one :skill
@@ -49,4 +50,14 @@ class Profile < ApplicationRecord
      self.profile_role_id ||= ProfileRole.find_by_role('admin').id
    end
 
+=======
+  belongs_to :profile_role
+  has_many :work_experiences
+  has_many :educaitons
+  has_one :skill
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+>>>>>>> master
 end
