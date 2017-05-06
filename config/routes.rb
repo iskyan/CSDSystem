@@ -5,24 +5,15 @@ Rails.application.routes.draw do
 
   get 'profile/edit'
   get 'profile/dashboard'
-
-  # Rails.application.routes.draw do
-  #       devise_for :users, controllers: {
-  #         sessions: 'users/sessions'
-  #       }
-  #     end
+  # resources :profiles
 
 
-  devise_for :profiles, controllers: {
-    sessions: 'profiles/sessions'
-  }
+  devise_for :profiles do
+    resources :educations
+    resources :skills
+    resources :work_experiences
+  end
 
-  resources :work_experiences
-
-  resources :educations
-  resources :skills
-  resources :work_experiences
-  resources :profile_roles
 
   scope "(:locale)",locale: /en|ru/ do
 
