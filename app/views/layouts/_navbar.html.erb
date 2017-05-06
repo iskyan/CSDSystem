@@ -88,9 +88,21 @@
               <form lang="en" action="" class="navbar-right">
                  <p class="lang-btn" ><%= link_to_unless_current "EN", locale: "en" %></p>
                  <p class="lang-btn" ><%= link_to_unless_current "RU", locale: "ru" %></p>
+<<<<<<< HEAD
                  <p class="lang-btn"> <%= link_to  "Login", new_profile_session_path ,  locale: "en" %> </p>
                   <p class="lang-btn"> <%= link_to "Logout", destroy_profile_session_path , method: :delete %> </p>
                  <button class="btn btn-success navbar-right login-btn" type="button" data-toggle="modal" data-target="#modal-1"><%= t "seven.login" %></button>
+=======
+
+                 <% if profile_signed_in? %>
+                 <p> <%= link_to "Dashboard",   profiles_dashboard_path   %>  </p>
+                 <p> <%= link_to  "Logout", destroy_profile_session_path , method: :delete , class: "btn btn-warning navbar-right login-btn", locale: "en" %> </p>
+                 <% else %>
+                 <p> <%= link_to  "Login", new_profile_session_path , class:"btn btn-success navbar-right login-btn", locale: "en" %> </p>
+                 <% end %>
+
+
+>>>>>>> fcc68e4fc2ae3fa4c1f66d7d3818648246e49b45
               </form>
            </div>
        </div>

@@ -4,7 +4,11 @@ ru:
     undergraduateProgram: "Бакалавр Программа"
     graduateProgram: "Магистр Программа"
     courses: "Курсы"
+<<<<<<< HEAD
     calendar: "Календарь"  
+=======
+    calendar: "Календарь"
+>>>>>>> fcc68e4fc2ae3fa4c1f66d7d3818648246e49b45
   second:
     about: "О нас"
     contacts: "Как найти нас?"
@@ -38,4 +42,8 @@ ru:
     announcments: "Объявления"
   seven:
     login: "ВОЙТИ"
+<<<<<<< HEAD
+=======
+    logout: "Logout"
+>>>>>>> fcc68e4fc2ae3fa4c1f66d7d3818648246e49b45
     authorization: "Авторизация"
