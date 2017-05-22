@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+
+# restore pevious state
+
   resources :skills
   resources :profile_roles
 
