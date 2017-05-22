@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Computer skill list:</strong>
+  <%= @computer_skill.computer_skill_list %>
+</p>
+
+<p>
+  <strong>Skill level:</strong>
+  <%= @computer_skill.skill_level %>
+</p>
+
+<p>
+  <strong>Profile:</strong>
+  <%= @computer_skill.profile %>
+</p>
+
+<%= link_to 'Edit', edit_computer_skill_path(@computer_skill) %> |
+<%= link_to 'Back', computer_skills_path %>

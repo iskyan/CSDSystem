@@ -1,0 +1,2 @@
+class ComputerSkillList < ApplicationRecord
+end

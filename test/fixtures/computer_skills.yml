@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  computer_skill_list: one
+  skill_level: one
+  profile: one
+
+two:
+  computer_skill_list: two
+  skill_level: two
+  profile: two

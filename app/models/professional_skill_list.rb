@@ -1,0 +1,2 @@
+class ProfessionalSkillList < ApplicationRecord
+end

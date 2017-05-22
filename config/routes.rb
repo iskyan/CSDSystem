@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
 
+  resources :computer_skills
+  resources :professional_skills
+  resources :languages
+  resources :skill_levels
+  resources :professional_skill_lists
+  resources :computer_skill_lists
 # restore pevious state
 
   resources :skills
