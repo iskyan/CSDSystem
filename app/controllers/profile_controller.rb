@@ -5,6 +5,7 @@ class ProfileController < ApplicationController
     @me = current_profile
     puts "PROFILE"
     puts @me.username.to_s
+    puts @me.profile_role.to_s
 
     # render :text => "asdf"
   end

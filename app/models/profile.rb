@@ -1,11 +1,11 @@
 class Profile < ApplicationRecord
-  before_create :set_default_role
+  before_validation :set_default_role
   has_many :work_experiences
   has_one :skill
   has_many :languages
   has_many :professional_skills
   has_many :computer_skills
-  belongs_to :profile_roles
+  belongs_to :profile_role
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -27,12 +27,15 @@ class Profile < ApplicationRecord
      end
   end
 
-   private
-   def set_default_role
-     puts "DEBUG: PROFILE ROLE SET"
-     puts ProfileRole.find_by_role("admin").id
-     self.profile_role_id ||= ProfileRole.find_by_role('admin').id
-   end
+
+
+  private
+     def set_default_role
+       puts "DEBUG: PROFILE ROLE SET"
+       puts ProfileRole.find_by_role("student").id
+       self.profile_role_id=2
+      #  self.profile_role_id ||= ProfileRole.find_by_role('student').id
+     end
 
 
 end

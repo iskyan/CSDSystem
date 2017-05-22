@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 20170522040107) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                                        null: false
     t.datetime "updated_at",                                        null: false
-    t.index ["email"], name: "index_profiles_on_email", unique: true
+    t.index ["email"], name: "index_profiles_on_email"
     t.index ["profile_role_id"], name: "index_profiles_on_profile_role_id"
     t.index ["reset_password_token"], name: "index_profiles_on_reset_password_token", unique: true
   end

@@ -11,7 +11,7 @@ class DeviseCreateProfiles < ActiveRecord::Migration[5.0]
       t.string :phone
       t.date :date_of_birth
       t.string :gender
-      t.references :profile_role
+      t.references :profile_role 
 
       ## Database authenticatable
       t.string :email,              default: "your@email.com"
@@ -47,7 +47,7 @@ class DeviseCreateProfiles < ActiveRecord::Migration[5.0]
       t.timestamps null: false
     end
 
-    add_index :profiles, :email,                unique: true
+    add_index :profiles, :email
     add_index :profiles, :reset_password_token, unique: true
     # add_index :profiles, :confirmation_token,   unique: true
     # add_index :profiles, :unlock_token,         unique: true
