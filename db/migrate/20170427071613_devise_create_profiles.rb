@@ -14,7 +14,7 @@ class DeviseCreateProfiles < ActiveRecord::Migration[5.0]
       t.references :profile_role
 
       ## Database authenticatable
-      t.string :email,              null: false, default: ""
+      t.string :email,              default: "your@email.com"
       t.string :encrypted_password, null: false, default: ""
 
       ## Recoverable
