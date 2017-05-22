@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Language:</strong>
+  <%= @language.language %>
+</p>
+
+<p>
+  <strong>Skill level:</strong>
+  <%= @language.skill_level %>
+</p>
+
+<p>
+  <strong>Profile:</strong>
+  <%= @language.profile %>
+</p>
+
+<%= link_to 'Edit', edit_language_path(@language) %> |
+<%= link_to 'Back', languages_path %>

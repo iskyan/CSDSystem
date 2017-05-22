@@ -1,4 +1,4 @@
 class Language < ApplicationRecord
-  belongs_to :skills_levels
-  belongs_to :profiles
+  belongs_to :skill_level
+  belongs_to :profile
 end

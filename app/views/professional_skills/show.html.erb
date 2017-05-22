@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Professional skill list:</strong>
+  <%= @professional_skill.professional_skill_list %>
+</p>
+
+<p>
+  <strong>Skill level:</strong>
+  <%= @professional_skill.skill_level %>
+</p>
+
+<p>
+  <strong>Profile:</strong>
+  <%= @professional_skill.profile %>
+</p>
+
+<%= link_to 'Edit', edit_professional_skill_path(@professional_skill) %> |
+<%= link_to 'Back', professional_skills_path %>
