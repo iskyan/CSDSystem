@@ -10,21 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170506101819) do
-
-  create_table "computer_skill_lists", force: :cascade do |t|
-    t.string   "comp_skill"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20170522040107) do
 
   create_table "computer_skills", force: :cascade do |t|
-    t.integer  "profile_id"
-    t.integer  "comp_skill_list_id"
+    t.integer  "computer_skill_list_id"
     t.integer  "skill_level_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.index ["comp_skill_list_id"], name: "index_computer_skills_on_comp_skill_list_id"
+    t.integer  "profile_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.index ["computer_skill_list_id"], name: "index_computer_skills_on_computer_skill_list_id"
     t.index ["profile_id"], name: "index_computer_skills_on_profile_id"
     t.index ["skill_level_id"], name: "index_computer_skills_on_skill_level_id"
   end
@@ -38,9 +32,9 @@ ActiveRecord::Schema.define(version: 20170506101819) do
   end
 
   create_table "languages", force: :cascade do |t|
-    t.integer  "profile_id"
-    t.integer  "skill_level_id"
     t.string   "language"
+    t.integer  "skill_level_id"
+    t.integer  "profile_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.index ["profile_id"], name: "index_languages_on_profile_id"
@@ -54,12 +48,12 @@ ActiveRecord::Schema.define(version: 20170506101819) do
   end
 
   create_table "professional_skills", force: :cascade do |t|
+    t.integer  "professional_skill_list_id"
     t.integer  "skill_level_id"
-    t.integer  "prof_skill_list_id"
     t.integer  "profile_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.index ["prof_skill_list_id"], name: "index_professional_skills_on_prof_skill_list_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["professional_skill_list_id"], name: "index_professional_skills_on_professional_skill_list_id"
     t.index ["profile_id"], name: "index_professional_skills_on_profile_id"
     t.index ["skill_level_id"], name: "index_professional_skills_on_skill_level_id"
   end
