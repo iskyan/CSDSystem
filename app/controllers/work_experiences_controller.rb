@@ -4,7 +4,7 @@ class WorkExperiencesController < ApplicationController
   # GET /work_experiences
   # GET /work_experiences.json
   def index
-    @work_experiences = WorkExperience.all
+    @work_experiences = current_profile.work_experiences.all
   end
 
   # GET /work_experiences/1
@@ -14,7 +14,7 @@ class WorkExperiencesController < ApplicationController
 
   # GET /work_experiences/new
   def new
-    @work_experience = WorkExperience.new
+    @work_experience = current_profile.work_experiences.build
   end
 
   # GET /work_experiences/1/edit
@@ -24,7 +24,7 @@ class WorkExperiencesController < ApplicationController
   # POST /work_experiences
   # POST /work_experiences.json
   def create
-    @work_experience = WorkExperience.new(work_experience_params)
+    @work_experience = current_profile.work_experiences.create(work_experience_params)
 
     respond_to do |format|
       if @work_experience.save
@@ -69,10 +69,7 @@ class WorkExperiencesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def work_experience_params
-<<<<<<< HEAD
-      params.require(:work_experience).permit(:work_period, :position, :place, :profile_id)
-=======
-      params.fetch(:work_experience, {})
->>>>>>> master
+      params.require(:work_experience).permit(:work_period, :position, :place)
+      # params.fetch(:work_experience, {})
     end
 end

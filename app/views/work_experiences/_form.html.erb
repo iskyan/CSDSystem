@@ -1,10 +1,10 @@
-<%= form_for(work_experience) do |f| %>
-  <% if work_experience.errors.any? %>
+<%= form_for(@work_experience) do |f| %>
+  <% if @work_experience.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(work_experience.errors.count, "error") %> prohibited this work_experience from being saved:</h2>
 
       <ul>
-      <% work_experience.errors.full_messages.each do |message| %>
+      <% my_work_experience.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -24,11 +24,6 @@
   <div class="field">
     <%= f.label :place %>
     <%= f.text_field :place %>
-  </div>
-
-  <div class="field">
-    <%= f.label :profile_id %>
-    <%= f.text_field :profile_id %>
   </div>
 
   <div class="actions">

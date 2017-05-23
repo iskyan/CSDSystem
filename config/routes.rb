@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :educations
   resources :computer_skills
   resources :professional_skills
   resources :languages
@@ -16,12 +17,10 @@ Rails.application.routes.draw do
   get 'profile/dashboard'
   # resources :profiles
 
+  resources :work_experiences
+  resources :skills
 
-  devise_for :profiles do
-    resources :educations
-    resources :skills
-    resources :work_experiences
-  end
+  devise_for :profiles 
 
 
   scope "(:locale)",locale: /en|ru/ do

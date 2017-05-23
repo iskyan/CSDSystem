@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170522040107) do
+ActiveRecord::Schema.define(version: 20170523061634) do
 
   create_table "computer_skill_lists", force: :cascade do |t|
     t.string   "comp_skill"
@@ -30,11 +30,13 @@ ActiveRecord::Schema.define(version: 20170522040107) do
   end
 
   create_table "educations", force: :cascade do |t|
-    t.string   "education_period", null: false
-    t.string   "education_type",   null: false
-    t.string   "faculty",          null: false
+    t.string   "education_period"
+    t.string   "education_type"
+    t.string   "faculty"
+    t.integer  "profile_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.index ["profile_id"], name: "index_educations_on_profile_id"
   end
 
   create_table "languages", force: :cascade do |t|

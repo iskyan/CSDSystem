@@ -1,26 +1,62 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid">
 
-<h1>Dashboard <%= current_profile.to_s %></h1>
+  <div class="col-md-4">
+    <h3>One Skill</h3>
+    <%= link_to "My Skill" , skills_path %>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Organizational skill</th>
-      <th>Publicaton</th>
-      <th>Project</th>
-      <th>Profile</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <td>
-    username:  <%= current_profile.username %>
-    <br />
-    role:  <%= current_profile.profile_role_id %>
-  </td>
+  <div class="col-md-4">
+    <h3>My educations</h3>
+    <%= link_to "My Educations" , educations_path %>
+  </div>
 
+  <div class="col-md-4">
+    <h1>Dashboard</h1>
 
-</table>
+    <h3>
+      username:
+      <%= current_profile.username %>
+    </h3>
 
-<br>
+    <h3>
+      role:
+      <%= current_profile.profile_role_id %>
+      <br/>
+      <%= current_profile.profile_role.role %>
+    </h3>
+  </div>
 
-<%= link_to 'New Skill', new_skill_path %>
+  <div class="col-md-4">
+    <h3>Work Experience</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Work period</th>
+          <th>Position</th>
+          <th>Place</th>
+          <th>Profile</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @current_profile.work_experiences.each do |work_experience| %>
+          <tr>
+            <td><%= work_experience.work_period %></td>
+            <td><%= work_experience.position %></td>
+            <td><%= work_experience.place %></td>
+            <td><%= work_experience.profile.username %></td>
+          </tr>
+        <% end %>
+      </tbody>
+
+    </table>
+
+    <div class="">
+      <%= link_to "My work experiences", work_experiences_path %>
+    </div>
+
+  </div>
+
+</div>

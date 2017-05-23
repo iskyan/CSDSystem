@@ -4,7 +4,7 @@ class SkillsController < ApplicationController
   # GET /skills
   # GET /skills.json
   def index
-    @skills = Skill.all
+    @skill = current_profile.skill
   end
 
   # GET /skills/1
@@ -14,7 +14,12 @@ class SkillsController < ApplicationController
 
   # GET /skills/new
   def new
-    @skill = Skill.new
+
+    if (current_profile.skill.id == nil)
+      @skill = current_profile.build_skill
+    else
+      redirect_to @current_profile.skill, notice: "You can create only on skill"
+    end
   end
 
   # GET /skills/1/edit
@@ -24,7 +29,7 @@ class SkillsController < ApplicationController
   # POST /skills
   # POST /skills.json
   def create
-    @skill = Skill.new(skill_params)
+    @skill = current_profile.create_skill(skill_params)
 
     respond_to do |format|
       if @skill.save
@@ -69,7 +74,7 @@ class SkillsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def skill_params
-      params.require(:skill).permit(:organizational_skill, :publicaton, :project, :profile_id)
-      params.fetch(:skill, {})
+      params.require(:skill).permit(:organizational_skill, :publicaton, :project)
+      # params.fetch(:skill, {})
     end
 end

@@ -17,7 +17,7 @@ class EducationsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create education" do
     assert_difference('Education.count') do
-      post educations_url, params: { education: {  } }
+      post educations_url, params: { education: { education_period: @education.education_period, education_type: @education.education_type, faculty: @education.faculty, profile_id: @education.profile_id } }
     end
 
     assert_redirected_to education_url(Education.last)
@@ -34,7 +34,7 @@ class EducationsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update education" do
-    patch education_url(@education), params: { education: {  } }
+    patch education_url(@education), params: { education: { education_period: @education.education_period, education_type: @education.education_type, faculty: @education.faculty, profile_id: @education.profile_id } }
     assert_redirected_to education_url(@education)
   end
 

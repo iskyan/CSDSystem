@@ -1,6 +1,7 @@
 class Profile < ApplicationRecord
   before_validation :set_default_role
   has_many :work_experiences
+  has_many :educations
   has_one :skill
   has_many :languages
   has_many :professional_skills

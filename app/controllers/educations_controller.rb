@@ -4,7 +4,7 @@ class EducationsController < ApplicationController
   # GET /educations
   # GET /educations.json
   def index
-    @educations = Education.all
+    @educations = current_profile.educations.all
   end
 
   # GET /educations/1
@@ -14,7 +14,7 @@ class EducationsController < ApplicationController
 
   # GET /educations/new
   def new
-    @education = Education.new
+    @education = current_profile.educations.build
   end
 
   # GET /educations/1/edit
@@ -24,7 +24,7 @@ class EducationsController < ApplicationController
   # POST /educations
   # POST /educations.json
   def create
-    @education = Education.new(education_params)
+    @education = current_profile.educations.create(education_params)
 
     respond_to do |format|
       if @education.save
@@ -64,11 +64,11 @@ class EducationsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_education
-      @education = Education.find(params[:id])
+      @education = current_profile.educations.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def education_params
-      params.fetch(:education, {})
+      params.require(:education).permit(:education_period, :education_type, :faculty)
     end
 end
