@@ -7,12 +7,12 @@
 
 <p>
   <strong>Skill level:</strong>
-  <%= @language.skill_level %>
+  <%= @language.skill_level.level %>
 </p>
 
 <p>
   <strong>Profile:</strong>
-  <%= @language.profile %>
+  <%= @language.profile.username %>
 </p>
 
 <%= link_to 'Edit', edit_language_path(@language) %> |

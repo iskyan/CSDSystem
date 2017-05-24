@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <h1>Languages</h1>
 
@@ -13,14 +12,14 @@
   </thead>
 
   <tbody>
-    <% @languages.each do |language| %>
+    <% current_profile.languages.each do |language| %>
       <tr>
         <td><%= language.language %></td>
-        <td><%= language.skill_level %></td>
-        <td><%= language.profile %></td>
-        <td><%= link_to 'Show', language %></td>
+            <% @sl = language.skill_level %>
+        <td><%= @sl.level %></td>
+        <td><%= language.profile.username %></td>
         <td><%= link_to 'Edit', edit_language_path(language) %></td>
-        <td><%= link_to 'Destroy', language, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', language_path(language), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

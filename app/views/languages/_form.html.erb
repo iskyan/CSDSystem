@@ -1,7 +1,7 @@
 <%= form_for(language) do |f| %>
   <% if language.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(language.errors.count, "error") %> prohibited this language from being saved:</h2>
+      <h2><%= pluralize(language.errors.count, "error") %> prohibited this education from being saved:</h2>
 
       <ul>
       <% language.errors.full_messages.each do |message| %>
@@ -11,22 +11,11 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :language %>
-    <%= f.text_field :language %>
-  </div>
+ 	
+ <%= f.text_field :language %><br />
+  <%= f.label :skill_level_id %><br />
+  <%= f.collection_select :skill_level_id, SkillLevel.order(:level), :id, :level, include_blank: true %>
 
-  <div class="field">
-    <%= f.label :skill_level_id %>
-    <%= f.text_field :skill_level_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :profile_id %>
-    <%= f.text_field :profile_id %>
-  </div>
-
-  <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
