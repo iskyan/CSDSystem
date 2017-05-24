@@ -2,12 +2,7 @@ Rails.application.routes.draw do
 
 
   resources :educations
-  resources :computer_skills
-  resources :professional_skills
-  resources :languages
-  resources :skill_levels
-  resources :professional_skill_lists
-  resources :computer_skill_lists
+  
 # restore pevious state
 
   resources :skills
@@ -20,7 +15,20 @@ Rails.application.routes.draw do
   resources :work_experiences
   resources :skills
 
-  devise_for :profiles 
+  
+
+
+
+  devise_for :profiles, :path => 'profiles'
+
+  resources :profiles do
+    resources :languages
+    resources :professional_skills
+    resources :computer_skills
+  end
+
+
+
 
 
   scope "(:locale)",locale: /en|ru/ do

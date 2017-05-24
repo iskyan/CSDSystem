@@ -13,14 +13,14 @@
   </thead>
 
   <tbody>
-    <% @professional_skills.each do |professional_skill| %>
+    <% current_profile.professional_skills.each do |professional_skill| %>
       <tr>
-        <td><%= professional_skill.professional_skill_list %></td>
-        <td><%= professional_skill.skill_level %></td>
-        <td><%= professional_skill.profile %></td>
-        <td><%= link_to 'Show', professional_skill %></td>
-        <td><%= link_to 'Edit', edit_professional_skill_path(professional_skill) %></td>
-        <td><%= link_to 'Destroy', professional_skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= professional_skill.professional_skill_list.prof_skill %></td>
+        <td><%= professional_skill.skill_level.level %></td>
+        <td><%= professional_skill.profile.username %></td>
+        <td><%= link_to 'Show', profile_professional_skill_path(current_profile,professional_skill) %></td>
+        <td><%= link_to 'Edit', edit_profile_professional_skill_path(current_profile,professional_skill) %></td>
+        <td><%= link_to 'Destroy', profile_professional_skill_path(current_profile,professional_skill), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Professional Skill', new_professional_skill_path %>
+<%= link_to 'New Professional Skill', new_profile_professional_skill_path(current_profile,@professional_skill) %>

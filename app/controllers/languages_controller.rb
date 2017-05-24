@@ -24,7 +24,7 @@ class LanguagesController < ApplicationController
   def create
     @language = current_profile.languages.create(language_params)
     if @language.save
-      redirect_to profile_dashboard_path, notice: "The language has been saved!"
+      redirect_to profile_languages_path, notice: "The language has been saved!"
     else
       render :text => "not"
     end
@@ -34,7 +34,7 @@ class LanguagesController < ApplicationController
   def update
     @language = current_profile.languages.find(params[:id])
     if @language.update(language_params)
-      redirect_to profile_dashboard_path, notice: "The language has been updated"
+      redirect_to profile_languages_path, notice: "The language has been updated"
       else
       render :text => "Not"
     end
@@ -44,7 +44,11 @@ class LanguagesController < ApplicationController
   def destroy
     @language = current_profile.languages.find(params[:id])
     @language.destroy
+    respond_to do |format|
+      format.html { redirect_to profile_languages_url, notice: 'Language skill was successfully destroyed.' }
+      format.json { head :no_content }
   end
+end
 
   private
 

@@ -15,5 +15,5 @@
   <%= @language.profile.username %>
 </p>
 
-<%= link_to 'Edit', edit_language_path(@language) %> |
-<%= link_to 'Back', languages_path %>
+<%= link_to 'Edit', edit_profile_language_path(current_profile,@language) %> |
+<%= link_to 'Back', profile_languages_path(current_profile,@language) %>

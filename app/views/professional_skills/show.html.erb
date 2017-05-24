@@ -2,18 +2,18 @@
 
 <p>
   <strong>Professional skill list:</strong>
-  <%= @professional_skill.professional_skill_list %>
+  <%= @professional_skill.professional_skill_list.prof_skill %>
 </p>
 
 <p>
   <strong>Skill level:</strong>
-  <%= @professional_skill.skill_level %>
+  <%= @professional_skill.skill_level.level %>
 </p>
 
 <p>
   <strong>Profile:</strong>
-  <%= @professional_skill.profile %>
+  <%= @professional_skill.profile.username %>
 </p>
 
-<%= link_to 'Edit', edit_professional_skill_path(@professional_skill) %> |
-<%= link_to 'Back', professional_skills_path %>
+<%= link_to 'Edit', edit_profile_professional_skill_path(current_profile,@professional_skill) %> |
+<%= link_to 'Back', profile_professional_skills_path(current_profile,@professional_skill) %>

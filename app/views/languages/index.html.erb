@@ -18,8 +18,9 @@
             <% @sl = language.skill_level %>
         <td><%= @sl.level %></td>
         <td><%= language.profile.username %></td>
-        <td><%= link_to 'Edit', edit_language_path(language) %></td>
-        <td><%= link_to 'Destroy', language_path(language), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_profile_language_path(current_profile,language) %></td>
+        <td><%= link_to 'Show', profile_language_path(current_profile,language) %></td>
+        <td><%= link_to 'Destroy', profile_language_path(current_profile,language), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -27,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Language', new_language_path %>
+<%= link_to 'New Language', new_profile_language_path %>

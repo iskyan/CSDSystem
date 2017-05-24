@@ -2,5 +2,5 @@
 
 <%= render 'form', language: @language%>
 
-<%= link_to 'Show', @language %> |
-<%= link_to 'Back', languages_path %>
+<%= link_to 'Show', profile_language_path(current_profile,@language) %> |
+<%= link_to 'Back', profile_languages_path %>
