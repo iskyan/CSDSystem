@@ -9,6 +9,9 @@
 ['admin', 'advisor', 'student'].each do |name|
   ProfileRole.find_or_create_by({role: name})
 
+end
+
+
   #Skill Level List
   level_list = [
     'Excelent',
@@ -42,4 +45,17 @@
   end
 
 
-end
+
+#Computer Skill List
+  computer_skill_list = [
+    "linux",
+    "windows",
+    "git" ,
+     "mac"
+  ]
+
+  computer_skill_list.each do |comp_skill|
+    ComputerSkillList.create( comp_skill: comp_skill)
+  end
+
+
