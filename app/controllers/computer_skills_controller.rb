@@ -4,7 +4,7 @@ class ComputerSkillsController < ApplicationController
   # GET /computer_skills
   # GET /computer_skills.json
   def index
-    @computer_skills = ComputerSkill.all
+    @computer_skills = current_profile.computer_skills.all
   end
 
   # GET /computer_skills/1
@@ -14,7 +14,7 @@ class ComputerSkillsController < ApplicationController
 
   # GET /computer_skills/new
   def new
-    @computer_skill = ComputerSkill.new
+    @computer_skill = current_profile.computer_skills.build
   end
 
   # GET /computer_skills/1/edit
@@ -24,15 +24,15 @@ class ComputerSkillsController < ApplicationController
   # POST /computer_skills
   # POST /computer_skills.json
   def create
-    @computer_skill = ComputerSkill.new(computer_skill_params)
+    @computer_skill = current_profile.computer_skills.create(computer_skill_params)
 
     respond_to do |format|
       if @computer_skill.save
-        format.html { redirect_to @computer_skill, notice: 'Computer skill was successfully created.' }
+        format.html { redirect_to profile_computer_skills_path, notice: 'Computer skill was successfully created.' }
         format.json { render :show, status: :created, location: @computer_skill }
       else
         format.html { render :new }
-        format.json { render json: @computer_skill.errors, status: :unprocessable_entity }
+        format.json { render json: profile_computer_skills.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -42,11 +42,11 @@ class ComputerSkillsController < ApplicationController
   def update
     respond_to do |format|
       if @computer_skill.update(computer_skill_params)
-        format.html { redirect_to @computer_skill, notice: 'Computer skill was successfully updated.' }
+        format.html { redirect_to profile_computer_skill_path notice: 'Computer skill was successfully updated.' }
         format.json { render :show, status: :ok, location: @computer_skill }
       else
         format.html { render :edit }
-        format.json { render json: @computer_skill.errors, status: :unprocessable_entity }
+        format.json { render json: profile_computer_skill.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -56,7 +56,7 @@ class ComputerSkillsController < ApplicationController
   def destroy
     @computer_skill.destroy
     respond_to do |format|
-      format.html { redirect_to computer_skills_url, notice: 'Computer skill was successfully destroyed.' }
+      format.html { redirect_to profile_computer_skills_path, notice: 'Computer skill was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,7 +64,7 @@ class ComputerSkillsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_computer_skill
-      @computer_skill = ComputerSkill.find(params[:id])
+      @computer_skill = current_profile.computer_skills.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -2,5 +2,5 @@
 
 <%= render 'form', computer_skill: @computer_skill %>
 
-<%= link_to 'Show', @computer_skill %> |
-<%= link_to 'Back', computer_skills_path %>
+<%= link_to 'Show', profile_computer_skill_path(current_profile,@computer_skill) %> |
+<%= link_to 'Back', profile_computer_skills_path %>

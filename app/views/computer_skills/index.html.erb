@@ -15,12 +15,12 @@
   <tbody>
     <% @computer_skills.each do |computer_skill| %>
       <tr>
-        <td><%= computer_skill.computer_skill_list %></td>
-        <td><%= computer_skill.skill_level %></td>
-        <td><%= computer_skill.profile %></td>
-        <td><%= link_to 'Show', computer_skill %></td>
-        <td><%= link_to 'Edit', edit_computer_skill_path(computer_skill) %></td>
-        <td><%= link_to 'Destroy', computer_skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= computer_skill.computer_skill_list.comp_skill %></td>
+        <td><%= computer_skill.skill_level.level %></td>
+        <td><%= computer_skill.profile.username %></td>
+        <td><%= link_to 'Show', profile_computer_skill_path(current_profile,computer_skill) %></td>
+        <td><%= link_to 'Edit', edit_profile_computer_skill_path(current_profile,computer_skill) %></td>
+        <td><%= link_to 'Destroy', profile_computer_skill_path(current_profile,computer_skill), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Computer Skill', new_computer_skill_path %>
+<%= link_to 'New Computer Skill', new_profile_computer_skill_path %>
