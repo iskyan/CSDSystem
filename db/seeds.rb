@@ -21,6 +21,25 @@
     SkillLevel.create( level: level)
   end
 
+  #Professional Skill List
+  professional_skill_list = [
+    'java',
+    "python",
+    "php",
+    "html",
+    "css",
+    "js",
+    "sql",
+    "ruby",
+    "ruby on rails",
+    "c",
+    "c++",
+    "c#"
+  ]
+
+  professional_skill_list.each do |skill_list|
+    ProfessionalSkillList.create( prof_skill: skill_list)
+  end
 
 
 end
