@@ -8,4 +8,19 @@
 
 ['admin', 'advisor', 'student'].each do |name|
   ProfileRole.find_or_create_by({role: name})
+
+  #Skill Level List
+  level_list = [
+    'Excelent',
+    'Good',
+    'Average',
+    'Poor'
+  ]
+
+  level_list.each do |level|
+    SkillLevel.create( level: level)
+  end
+
+
+
 end
