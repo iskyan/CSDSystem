@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Work period:</strong>
@@ -19,5 +18,5 @@
   <strong>Profile:</strong>
   <%= @work_experience.profile %>
 </p>
-<%= link_to 'Edit', edit_work_experience_path(@work_experience) %> |
-<%= link_to 'Back', work_experiences_path %>
+<%= link_to 'Edit', edit_profile_work_experience_path(current_profile, @work_experience) %> |
+<%= link_to 'Back', profile_work_experiences_path(current_profile) %>

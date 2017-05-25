@@ -1,5 +1,5 @@
 <h1>New Work Experience</h1>
 
-<%= render 'form', work_experience: @work_experience %>
+<%= render 'form', current_profile: @current_profile, work_experience: @work_experience %>
 
-<%= link_to 'Back', work_experiences_path %>
+<%= link_to 'Back', profile_work_experiences_path(current_profile) %>

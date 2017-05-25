@@ -1,4 +1,7 @@
-<p id="notice"><%= notice %></p>
+<p>
+  <strong>Profile:</strong>
+  <%= @skill.profile.username %>
+</p>
 
 <p>
   <strong>Organizational skill:</strong>
@@ -15,10 +18,6 @@
   <%= @skill.project %>
 </p>
 
-<p>
-  <strong>Profile:</strong>
-  <%= @skill.profile %>
-</p>
 
-<%= link_to 'Edit', edit_skill_path(@skill) %> |
-<%= link_to 'Back', skills_path %>
+<%= link_to 'Edit', edit_profile_skill_path(current_profile, @skill)  %> |
+<%= link_to 'Back', profile_skills_path(current_profile) %>

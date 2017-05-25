@@ -18,10 +18,10 @@
         <td><%= education.education_period %></td>
         <td><%= education.education_type %></td>
         <td><%= education.faculty %></td>
-        <td><%= education.profile %></td>
-        <td><%= link_to 'Show', education %></td>
-        <td><%= link_to 'Edit', edit_education_path(education) %></td>
-        <td><%= link_to 'Destroy', education, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= education.profile.username %></td>
+        <td><%= link_to 'Show', profile_education_path(current_profile, education) %></td>
+        <td><%= link_to 'Edit', edit_profile_education_path(current_profile, education) %></td>
+        <td><%= link_to 'Destroy',   profile_education_path(current_profile, education), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New Education', new_education_path %>
+<%= link_to 'New Education', new_profile_education_path  %>
