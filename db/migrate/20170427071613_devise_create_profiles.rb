@@ -9,6 +9,7 @@ class DeviseCreateProfiles < ActiveRecord::Migration[5.0]
       t.string :email
       t.string :address
       t.string :phone
+      t.string :profile_image
       t.date :date_of_birth
       t.string :gender
       t.references :profile_role 

@@ -1,24 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Organizational skill:</strong>
-  <%= @skill.organizational_skill %>
+  <strong>Your face</strong>
+  <%= image_tag @profile.profile_image.url(:thumb) %>
 </p>
-
-<p>
-  <strong>Publicaton:</strong>
-  <%= @skill.publicaton %>
-</p>
-
-<p>
-  <strong>Project:</strong>
-  <%= @skill.project %>
-</p>
-
-<p>
-  <strong>Profile:</strong>
-  <%= @skill.profile %>
-</p>
-
-<%= link_to 'Edit', edit_skill_path(@skill) %> |
-<%= link_to 'Back', skills_path %>

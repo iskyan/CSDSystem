@@ -15,7 +15,7 @@
   <%= f.label :computer_skill_list_id %><br />
   <%= f.collection_select :computer_skill_list_id, ComputerSkillList.order(:comp_skill), :id, :comp_skill, include_blank: true %>
    <%= f.label :skill_level_id %><br />
-  <%= f.collection_select :skill_level_id, SkillLevel.order(:level), :id, :level, include_blank: true %>
+  <%= f.collection_select :skill_level_id, SkillLevel.order(:id), :id, :level, include_blank: true %>
   <div class="actions"><%= f.submit %></div>
 
   </div>

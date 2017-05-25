@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(version: 20170523061634) do
     t.string   "email",                  default: "your@email.com"
     t.string   "address"
     t.string   "phone"
+    t.string   "profile_image"
     t.date     "date_of_birth"
     t.string   "gender"
     t.integer  "profile_role_id"

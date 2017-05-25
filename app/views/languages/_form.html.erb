@@ -14,7 +14,7 @@
  	
  <%= f.text_field :language %><br />
   <%= f.label :skill_level_id %><br />
-  <%= f.collection_select :skill_level_id, SkillLevel.order(:level), :id, :level, include_blank: true %>
+  <%= f.collection_select :skill_level_id, SkillLevel.order(:id), :id, :level, include_blank: true %>
 
     <%= f.submit %>
   </div>

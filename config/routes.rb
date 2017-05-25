@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   devise_for :profiles, :path => 'profiles'
 
-  resources :profiles do
+  resources :profile do
     resources :languages
     resources :professional_skills
     resources :computer_skills
