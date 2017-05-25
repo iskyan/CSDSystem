@@ -2,5 +2,5 @@
 
 <%= render 'form', skill: @skill %>
 
-<%= link_to 'Show', @skill %> |
-<%= link_to 'Back', skills_path %>
+<%= link_to 'Show', profile_skill_path(current_profile, @skill) %> |
+<%= link_to 'Back', profile_skills_path(current_profile) %>

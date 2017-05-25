@@ -16,13 +16,13 @@
   <tbody>
     <% @work_experiences.each do |work_experience| %>
       <tr>
+        <td><%= work_experience.profile.username %></td>
         <td><%= work_experience.work_period %></td>
         <td><%= work_experience.position %></td>
         <td><%= work_experience.place %></td>
-        <td><%= work_experience.profile %></td>
-        <td><%= link_to 'Show', work_experience %></td>
-        <td><%= link_to 'Edit', edit_work_experience_path(work_experience) %></td>
-        <td><%= link_to 'Destroy', work_experience, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', profile_work_experience_path(current_profile, work_experience) %></td>
+        <td><%= link_to 'Edit', edit_profile_work_experience_path(current_profile, work_experience) %></td>
+        <td><%= link_to 'Destroy', profile_work_experience_path(current_profile, work_experience), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Work Experience', new_work_experience_path %>
+<%= link_to 'New Work Experience', new_profile_work_experience_path %>

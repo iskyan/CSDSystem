@@ -1,27 +1,17 @@
 Rails.application.routes.draw do
 
-
-  resources :educations
-  
-# restore pevious state
-
-  resources :skills
   resources :profile_roles
 
   get 'profile/edit'
   get 'profile/dashboard'
-  # resources :profiles
-
-  resources :work_experiences
-  resources :skills
-
-  
-
 
 
   devise_for :profiles, :path => 'profiles'
 
   resources :profiles do
+    resources :work_experiences
+    resources :skills
+    resources :educations
     resources :languages
     resources :professional_skills
     resources :computer_skills

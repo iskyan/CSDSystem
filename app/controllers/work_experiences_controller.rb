@@ -28,7 +28,7 @@ class WorkExperiencesController < ApplicationController
 
     respond_to do |format|
       if @work_experience.save
-        format.html { redirect_to @work_experience, notice: 'Work experience was successfully created.' }
+        format.html { redirect_to profile_work_experiences_path, notice: 'Work experience was successfully created.' }
         format.json { render :show, status: :created, location: @work_experience }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class WorkExperiencesController < ApplicationController
   def update
     respond_to do |format|
       if @work_experience.update(work_experience_params)
-        format.html { redirect_to @work_experience, notice: 'Work experience was successfully updated.' }
+        format.html { redirect_to profile_work_experiences_path, notice: 'Work experience was successfully updated.' }
         format.json { render :show, status: :ok, location: @work_experience }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class WorkExperiencesController < ApplicationController
   def destroy
     @work_experience.destroy
     respond_to do |format|
-      format.html { redirect_to work_experiences_url, notice: 'Work experience was successfully destroyed.' }
+      format.html { redirect_to profile_work_experiences_path	, notice: 'Work experience was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,12 +64,11 @@ class WorkExperiencesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_work_experience
-      @work_experience = WorkExperience.find(params[:id])
+      @work_experience = current_profile.work_experiences.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def work_experience_params
       params.require(:work_experience).permit(:work_period, :position, :place)
-      # params.fetch(:work_experience, {})
     end
 end

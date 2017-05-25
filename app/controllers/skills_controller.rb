@@ -15,7 +15,7 @@ class SkillsController < ApplicationController
   # GET /skills/new
   def new
 
-    if (current_profile.skill.id == nil)
+    if (current_profile.skill  == nil)
       @skill = current_profile.build_skill
     else
       redirect_to @current_profile.skill, notice: "You can create only on skill"
@@ -33,7 +33,7 @@ class SkillsController < ApplicationController
 
     respond_to do |format|
       if @skill.save
-        format.html { redirect_to @skill, notice: 'Skill was successfully created.' }
+        format.html { redirect_to profile_skills_path, notice: 'Skill was successfully created.' }
         format.json { render :show, status: :created, location: @skill }
       else
         format.html { render :new }
@@ -47,7 +47,7 @@ class SkillsController < ApplicationController
   def update
     respond_to do |format|
       if @skill.update(skill_params)
-        format.html { redirect_to @skill, notice: 'Skill was successfully updated.' }
+        format.html { redirect_to profile_skills_path, notice: 'Skill was successfully updated.' }
         format.json { render :show, status: :ok, location: @skill }
       else
         format.html { render :edit }

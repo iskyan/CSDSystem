@@ -4,7 +4,7 @@ Devise.setup do |config|
 
   #config.cas_base_url = "http://localhost:8080/casold"
 
-  config.cas_base_url = "https://localhost:8443/casold"
+  config.cas_base_url = "http://localhost:8080/casold"
   config.cas_enable_single_sign_out = true
 
   config.cas_client_config_options = {
