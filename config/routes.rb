@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
 
 
-  resources :profiles do
+  resources :profile do
     resources :work_experiences
     resources :skills
     resources :educations
