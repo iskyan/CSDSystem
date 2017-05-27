@@ -15,7 +15,7 @@
     <% @groups.each do |group| %>
       <tr>
         <td><%= group.name %></td>
-        <td><%= group.profile_id %></td>
+        <td><%= Profile.find(group.profile_id).name %></td>
         <td><%= link_to 'Show', profile_group_path(current_profile,group) %></td>
         <td><%= link_to 'Edit', edit_profile_group_path(current_profile, group) %></td>
         <td><%= link_to 'Destroy', profile_group_path(current_profile,group), method: :delete, data: { confirm: 'Are you sure?' } %></td>

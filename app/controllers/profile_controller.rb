@@ -5,11 +5,21 @@ class ProfileController < ApplicationController
 
   def dashboard
     advisor= ProfileRole.find_by_role("advisor").id
+    admin= ProfileRole.find_by_role("admin").id
+    puts "cur"
+    puts current_profile.profile_role_id
+    puts admin
     if(current_profile.profile_role_id==advisor)
       @groups=[]
       @groups.push Group.find_by_profile_id(current_profile.id)
       puts @groups
       render 'profile/advisor/dashboard'
+    elsif(current_profile.profile_role_id==admin)
+      @groups=Group.all
+      @advisors=[]
+      @advisors.push Profile.find_by_profile_role_id(advisor)
+      puts "ADMIN"
+      render 'profile/admin/dashboard'
     else
       @work_experience = current_profile.work_experiences.build
     end
@@ -20,6 +30,7 @@ class ProfileController < ApplicationController
     @students = @group.profiles
     render 'profile/advisor/students'
   end
+
 
 
   # GET /profiles
@@ -37,6 +48,9 @@ class ProfileController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
+    if current_profile!=@profile
+      redirect_to root_url, notice: 'Permission denied'
+    end
   end
 
   # POST /profiles
@@ -72,6 +86,10 @@ class ProfileController < ApplicationController
   # DELETE /profiles/1
   # DELETE /profiles/1.json
   def destroy
+    if current_profile!=@profile
+      redirect_to root_url, notice: 'Permission denied'
+    end
+
     @profile.destroy
     respond_to do |format|
       format.html { redirect_to profiles_url, notice: 'Profile was successfully destroyed.' }

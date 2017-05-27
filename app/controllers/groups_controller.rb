@@ -10,6 +10,7 @@ class GroupsController < ApplicationController
   # GET /groups/1
   # GET /groups/1.json
   def show
+    @students = @group.profiles
   end
 
   # GET /groups/new
@@ -56,7 +57,7 @@ class GroupsController < ApplicationController
   def destroy
     @group.destroy
     respond_to do |format|
-      format.html { redirect_to groups_url, notice: 'Group was successfully destroyed.' }
+      format.html { redirect_to profile_groups_path, notice: 'Group was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

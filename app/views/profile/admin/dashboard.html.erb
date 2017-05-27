@@ -1,0 +1,41 @@
+<div class="container-fluid">
+    <h1>Welcome Admin</h1>
+
+    <h3>
+      You are:  <%= current_profile.username %>
+      <br/>
+      <%= current_profile.profile_role.role %>
+    </h3>
+
+</div>
+
+
+<div class="container-fluid">
+
+<div class="row">
+
+
+  <div class="col-md-4">
+        <%= link_to "All groups", profile_groups_path(current_profile, @group) %>
+  </div>
+
+  <div class="col-md-4">
+        <table>
+          <thead>
+            <tr>
+              <th>Advisors</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @advisors.each do |advisor| %>
+              <tr>
+                <td><%= advisor.name %> </td>
+                <td><%= advisor.username %> </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+    </div>
+</div>
+
+</div>
