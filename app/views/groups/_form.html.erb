@@ -1,0 +1,17 @@
+<%= form_for ([current_profile, group]) do |f| %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :profile_id %><br />
+    <%= f.collection_select :profile_id, Profile.order(:id), :id, :username, include_blank: true %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+
+<% end %>

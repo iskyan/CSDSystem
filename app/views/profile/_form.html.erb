@@ -1,8 +1,8 @@
 <%= form_for (@profile),html: {multipart: true} do |f| %>
-  
+
   <div>
     <%= f.file_field :profile_image %>
-    <%= f.submit %>
+
   </div>
 
 
@@ -20,6 +20,11 @@
     <%= f.label :surname %>
     <%= f.text_field :surname %>
   </div>
+
+  <div class="field">
+    <%= f.label :group_id %><br />
+    <%= f.collection_select :group_id, Group.order(:id), :id, :name, include_blank: true %>
+    </div>
 
 
   <div class="field">

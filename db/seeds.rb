@@ -59,3 +59,15 @@ end
   end
 
 
+
+  #Groups
+  groups = [
+    '1',
+    '2',
+    '3',
+    '4'
+  ]
+
+  groups.each do |groups|
+    Group.create(name: groups)
+  end

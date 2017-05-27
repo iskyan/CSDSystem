@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170523061634) do
+ActiveRecord::Schema.define(version: 20170527062551) do
 
   create_table "computer_skill_lists", force: :cascade do |t|
     t.string   "comp_skill"
@@ -37,6 +37,14 @@ ActiveRecord::Schema.define(version: 20170523061634) do
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.index ["profile_id"], name: "index_educations_on_profile_id"
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_groups_on_profile_id"
   end
 
   create_table "languages", force: :cascade do |t|
@@ -84,6 +92,7 @@ ActiveRecord::Schema.define(version: 20170523061634) do
     t.date     "date_of_birth"
     t.string   "gender"
     t.integer  "profile_role_id"
+    t.integer  "group_id"
     t.string   "encrypted_password",     default: "",               null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -96,6 +105,7 @@ ActiveRecord::Schema.define(version: 20170523061634) do
     t.datetime "created_at",                                        null: false
     t.datetime "updated_at",                                        null: false
     t.index ["email"], name: "index_profiles_on_email"
+    t.index ["group_id"], name: "index_profiles_on_group_id"
     t.index ["profile_role_id"], name: "index_profiles_on_profile_role_id"
     t.index ["reset_password_token"], name: "index_profiles_on_reset_password_token", unique: true
   end

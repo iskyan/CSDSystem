@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get 'profile/edit'
   get 'profile/dashboard'
+  get 'profile/students'
 
 
   devise_for :profiles, :path => 'profiles'
@@ -17,6 +18,8 @@ Rails.application.routes.draw do
     resources :languages
     resources :professional_skills
     resources :computer_skills
+    resources :groups
+
   end
 
 

@@ -1,0 +1,6 @@
+<h1>Editing Group</h1>
+
+<%= render 'form', current_profile: current_profile , group: @group %>
+
+<td><%= link_to 'Show', profile_group_path(current_profile,@group) %></td>
+<%= link_to 'Back', profile_groups_path %>

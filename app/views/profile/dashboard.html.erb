@@ -17,12 +17,20 @@
     </h3>
   </div>
 
-<div class="col-md-4">  
+<div class="col-md-4">
+  <p>
+    <strong>Groups</strong>
+    <%= link_to "group", profile_groups_path(current_profile, @group) %>
+  </p>
+  </div>
+
+
+<div class="col-md-4">
 <p>
   <strong>Your face</strong>
   <%= image_tag current_profile.profile_image.url(:thumb) if current_profile.profile_image? %>
 </p>
-</div>  
+</div>
 
 
   <div class="col-md-4">
@@ -57,7 +65,7 @@
     <%= link_to "My Educations" , profile_educations_path(current_profile, @educations)  %>
   </div>
 
-  
+
 
   <div class="col-md-4">
     <h3>Work Experience</h3>

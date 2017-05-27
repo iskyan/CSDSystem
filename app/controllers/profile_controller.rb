@@ -1,9 +1,24 @@
 class ProfileController < ApplicationController
   before_action :authenticate_profile!
   before_action :set_profile, only: [:show,:edit, :update, :destroy]
+  before_action :get_group, only: [:students]
 
   def dashboard
-    @work_experience = current_profile.work_experiences.build
+    advisor= ProfileRole.find_by_role("advisor").id
+    if(current_profile.profile_role_id==advisor)
+      @groups=[]
+      @groups.push Group.find_by_profile_id(current_profile.id)
+      puts @groups
+      render 'profile/advisor/dashboard'
+    else
+      @work_experience = current_profile.work_experiences.build
+    end
+
+  end
+
+  def students
+    @students = @group.profiles
+    render 'profile/advisor/students'
   end
 
 
@@ -66,6 +81,10 @@ class ProfileController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def get_group
+      @group = Group.find(params[:id])
+    end
+
     def set_profile
       @profile = Profile.find(params[:id])
     end

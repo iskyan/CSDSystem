@@ -36,7 +36,9 @@ class Profile < ApplicationRecord
      def set_default_role
        puts "DEBUG: PROFILE ROLE SET"
        puts ProfileRole.find_by_role("student").id
-       self.profile_role_id=2
+       if self.profile_role_id==nil
+         self.profile_role_id=ProfileRole.find_by_role("student").id
+       end
       #  self.profile_role_id ||= ProfileRole.find_by_role('student').id
      end
 

@@ -12,8 +12,8 @@ class DeviseCreateProfiles < ActiveRecord::Migration[5.0]
       t.string :profile_image
       t.date :date_of_birth
       t.string :gender
-      t.references :profile_role 
-
+      t.references :profile_role
+      t.references :group, foreign_key: true
       ## Database authenticatable
       t.string :email,              default: "your@email.com"
       t.string :encrypted_password, null: false, default: ""

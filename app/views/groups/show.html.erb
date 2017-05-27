@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @group.name %>
+</p>
+
+<p>
+  <strong>Profile:</strong>
+  <%= @group.profiles %>
+</p>
+
+<td><%= link_to 'Edit', edit_profile_group_path(current_profile, @group) %></td>
+<%= link_to 'Back', profile_groups_path %>

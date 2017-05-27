@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <h1>Welcome Advisor</h1>
+
+    <h3>
+      You are:      <%= current_profile.username %>
+      <br/>
+      <%= current_profile.profile_role.role %>
+    </h3>
+
+</div>
+
+
+<div class="container-fluid">
+
+<div class="row">
+
+  <div class="col-md-4">
+      <table>
+        <thead>
+          <tr>
+            <th>groups</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @groups.each do |group| %>
+            <tr>
+              <td><%= group.name %></td>
+              <td><%= link_to 'Show group students', profile_students_path(:id => group.id) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+  </div>
+
+</div>
+
+</div>
