@@ -1,11 +1,11 @@
 <div class="container-fluid">
     <h1>Welcome Admin</h1>
-
     <h3>
       You are:  <%= current_profile.username %>
       <br/>
       <%= current_profile.profile_role.role %>
     </h3>
+    <h3>Super admin dashboard: <%= link_to "Dashboard",  rails_admin_path %> </h3>
 
 </div>
 
@@ -13,7 +13,6 @@
 <div class="container-fluid">
 
 <div class="row">
-
 
   <div class="col-md-4">
         <%= link_to "All groups", profile_groups_path(current_profile, @group) %>

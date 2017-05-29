@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount RailsAdmin::Engine => '/adminstrator', as: 'rails_admin'
   resources :profile_roles
 
   get 'profile/edit'

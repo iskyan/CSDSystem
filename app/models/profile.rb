@@ -30,8 +30,6 @@ class Profile < ApplicationRecord
      end
   end
 
-
-
   private
      def set_default_role
        puts "DEBUG: PROFILE ROLE SET"

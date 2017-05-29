@@ -16,8 +16,11 @@ class ProfileController < ApplicationController
       render 'profile/advisor/dashboard'
     elsif(current_profile.profile_role_id==admin)
       @groups=Group.all
-      @advisors=[]
-      @advisors.push Profile.find_by_profile_role_id(advisor)
+      @advisors=Profile.find_by_profile_role_id(advisor)
+      if @advisors==nil
+        @advisors=[]
+      end
+
       puts "ADMIN"
       render 'profile/admin/dashboard'
     else

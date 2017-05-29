@@ -7,6 +7,7 @@ end
 
 # Gem files inserted by Omurbek
 
+gem 'rails_admin'
 gem 'devise'
 gem 'devise_cas_authenticatable'
 gem 'simple_form'  # Bootstrap functionality
