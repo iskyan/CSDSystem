@@ -1,0 +1,214 @@
+<div class="container">
+
+  <div class="col-md-4">
+  <%= wicked_pdf_stylesheet_link_tag 'pdf' %>
+        <h3>About me</h3>
+      <p>
+        <strong>Your face</strong>
+        <%= wicked_pdf_image_tag "#{@profile.profile_image.url(:thumb)}" %>
+      </p>
+
+      <p>
+        <strong>username:</strong>
+        <%= @profile.username %>
+      </p>
+
+      <p>
+        <strong>name:</strong>
+        <%= @profile.name %>
+      </p>
+
+      <p>
+        <strong>surname:</strong>
+        <%= @profile.surname %>
+      </p>
+
+
+      <p>
+        <strong>Group:</strong>
+        <%= Group.find(current_profile.group_id).name if current_profile.group_id? %>
+      </p>
+
+
+      <p>
+        <strong>email:</strong>
+        <%= @profile.email %>
+      </p>
+
+      <p>
+        <strong>address:</strong>
+        <%= @profile.address %>
+      </p>
+
+      <p>
+        <strong>phone:</strong>
+        <%= @profile.phone %>
+      </p>
+
+      <p>
+        <strong>date of birth:</strong>
+        <%= @profile.date_of_birth %>
+      </p>
+
+      <p>
+        <strong>gender:</strong>
+        <%= @profile.gender %>
+      </p>
+
+      <% if current_profile==@profile %>
+
+          <h3>Edit your profile</h3>
+          <%= link_to "Edit your profile" , edit_profile_path(@profile) %>
+      <% end %>
+  </div>
+
+
+  <div class="col-md-4">
+    <h3>My Work Experiences</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Work period</th>
+          <th>Position</th>
+          <th>Place</th>
+          <th>Profile</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @profile.work_experiences.each do |work_experience| %>
+          <tr>
+            <td><%= work_experience.profile.username %></td>
+            <td><%= work_experience.work_period %></td>
+            <td><%= work_experience.position %></td>
+            <td><%= work_experience.place %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+<div class="col-md-4">
+  <h3>Profesionals skill</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Professional skill list</th>
+        <th>Skill level</th>
+        <th>Profile</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @profile.professional_skills.each do |professional_skill| %>
+        <tr>
+          <td><%= professional_skill.professional_skill_list.prof_skill %></td>
+          <td><%= professional_skill.skill_level.level %></td>
+          <td><%= professional_skill.profile.username %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
+
+<div class="col-md-4">
+  <h1>Skills</h1>
+
+      <% if @profile.skill!=nil %>
+      <% @skill = @profile.skill %>
+      <tr>
+        <td><%= @skill.organizational_skill %></td>
+        <td><%= @skill.publicaton %></td>
+        <td><%= @skill.project %></td>
+      </tr>
+      <% end %>
+
+</div>
+
+<div class="col-md-4">
+  <h3>My languages</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Language</th>
+        <th>Skill level</th>
+        <th>Profile</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @profile.languages.each do |language| %>
+        <tr>
+          <td><%= language.language %></td>
+              <% @sl = language.skill_level %>
+          <td><%= @sl.level %></td>
+          <td><%= language.profile.username %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="col-md-4">
+  <h3>My Educations</h3>
+
+
+  <table>
+    <thead>
+      <tr>
+        <th>Education period</th>
+        <th>Education type</th>
+        <th>Faculty</th>
+        <th>Profile</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @profile.educations.each do |education| %>
+        <tr>
+          <td><%= education.education_period %></td>
+          <td><%= education.education_type %></td>
+          <td><%= education.faculty %></td>
+          <td><%= education.profile.username %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
+
+<div class="col-md-4">
+
+  <h1>My Computer Skills</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Computer skill list</th>
+        <th>Skill level</th>
+        <th>Profile</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @profile.computer_skills.each do |computer_skill| %>
+        <tr>
+          <td><%= computer_skill.computer_skill_list.comp_skill %></td>
+          <td><%= computer_skill.skill_level.level %></td>
+          <td><%= computer_skill.profile.username %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+
+</div>
+
+</div>

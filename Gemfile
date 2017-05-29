@@ -6,8 +6,12 @@ git_source(:github) do |repo_name|
 end
 
 # Gem files inserted by Omurbek
-
-gem 'rails_admin'
+#gem to convert to prf
+# gem 'prawn'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'#rails g wicked_pdf
+#
+gem 'rails_admin', '~> 1.1.1'
 gem 'devise'
 gem 'devise_cas_authenticatable'
 gem 'simple_form'  # Bootstrap functionality

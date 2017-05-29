@@ -65,12 +65,18 @@
     <%= link_to "My Educations" , profile_educations_path(current_profile, @educations)  %>
   </div>
 
+  <div class="col-md-4">
+    <h3>Create Cv</h3>
+    <%= link_to "Create Cv" , profile_path(current_profile, format: 'pdf')  %>
+  </div>
+
 
 
   <div class="col-md-4">
     <h3>Work Experience</h3>
     <div class="">
       <%= link_to "My work experiences", profile_work_experiences_path(current_profile) %>
+
     </div>
 
   </div>

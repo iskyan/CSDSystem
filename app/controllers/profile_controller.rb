@@ -45,6 +45,25 @@ class ProfileController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+
+    # respond_to do |format|
+    #   format.html
+    #   format.pdf do
+    #     pdf = Prawn::Document.new
+    #     pdf.html "profile/dashboard"
+    #     send_data pdf.render,filename: "profile_#{@profile}.pdf",type: "application/pdf",
+    #                                                                               disposition: "inline"
+    #   end
+    # end
+
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf { render template: 'profile/cv',pdf: 'cv' }
+      
+
+    end
+
   end
 
   # GET /profiles/new
