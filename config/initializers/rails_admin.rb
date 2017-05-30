@@ -5,6 +5,13 @@ RailsAdmin.config do |config|
   config.authorize_with do
     redirect_to main_app.root_path unless current_profile.profile_role.role=='admin'
   end
+
+ config.model 'Profile' do
+    update do
+      field :group_id
+    end
+   end
+
   ## == Devise ==
   # config.authenticate_with do
   #   warden.authenticate! scope: :user

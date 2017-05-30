@@ -16,12 +16,14 @@ class ProfileController < ApplicationController
       render 'profile/advisor/dashboard'
     elsif(current_profile.profile_role_id==admin)
       @groups=Group.all
-      @advisors=Profile.find_by_profile_role_id(advisor)
+      @advisors=[]
+      @advisors.push Profile.find_by_profile_role_id(advisor)
       if @advisors==nil
         @advisors=[]
       end
 
       puts "ADMIN"
+      puts @advisors.size
       render 'profile/admin/dashboard'
     else
       @work_experience = current_profile.work_experiences.build
@@ -60,7 +62,7 @@ class ProfileController < ApplicationController
       format.html
       format.json
       format.pdf { render template: 'profile/cv',pdf: 'cv' }
-      
+
 
     end
 

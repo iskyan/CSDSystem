@@ -26,11 +26,13 @@
             </tr>
           </thead>
           <tbody>
-            <% @advisors.each do |advisor| %>
-              <tr>
-                <td><%= advisor.name %> </td>
-                <td><%= advisor.username %> </td>
-              </tr>
+            <% if @advisors!=nil %>
+              <% @advisors.each do |advisor| %>
+                <tr>
+                  <td><%= advisor.name %> </td>
+                  <td><%= advisor.username %> </td>
+                </tr>
+              <% end %>
             <% end %>
           </tbody>
         </table>
