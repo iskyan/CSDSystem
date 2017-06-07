@@ -1,15 +1,30 @@
-<h1>Skills</h1>
+<div class="container content" style="height: 500px;">
+  <p id="notice"><%= notice %></p>
 
-    <% if @skill!=nil %>
-    <tr>
-      <td><%= @skill.organizational_skill %></td>
-      <td><%= @skill.publicaton %></td>
-      <td><%= @skill.project %></td>
-      <td><%= @skill.profile.username %></td>
-      <td><%= link_to 'Show', profile_skill_path(current_profile, @skill) %></td>
-      <td><%= link_to 'Edit', edit_profile_skill_path(current_profile, @skill) %></td>
-      <td><%= link_to 'Destroy', profile_skill_path(current_profile, @skill), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-    <% else %>
-<%= link_to 'New Skill', new_profile_skill_path %>
-<% end %>
+  <table>
+    <thead>
+      <tr>
+        <th><h3>Skills<h3></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Organizational skills</strong></td>
+        <td><strong>Publications</strong></td>
+        <td><strong>Projects</strong></td>
+      </tr>
+      <% if @skill!=nil %>
+        <tr>
+          <td><%= @skill.organizational_skill %></td>
+          <td><%= @skill.publicaton %></td>
+          <td><%= @skill.project %></td>
+          <td><%= link_to 'Show', profile_skill_path(current_profile, @skill) %></td>
+          <td><%= link_to 'Edit', edit_profile_skill_path(current_profile, @skill) %></td>
+          <td><%= link_to 'Destroy', profile_skill_path(current_profile, @skill), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% else %>
+        <%= link_to 'New Skill', new_profile_skill_path %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

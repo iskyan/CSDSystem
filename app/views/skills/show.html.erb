@@ -1,23 +1,23 @@
-<p>
-  <strong>Profile:</strong>
-  <%= @skill.profile.username %>
-</p>
-
-<p>
-  <strong>Organizational skill:</strong>
-  <%= @skill.organizational_skill %>
-</p>
-
-<p>
-  <strong>Publicaton:</strong>
-  <%= @skill.publicaton %>
-</p>
-
-<p>
-  <strong>Project:</strong>
-  <%= @skill.project %>
-</p>
-
-
-<%= link_to 'Edit', edit_profile_skill_path(current_profile, @skill)  %> |
-<%= link_to 'Back', profile_skills_path(current_profile) %>
+<div class="container content" style="height: 500px;">
+  <table>
+    <thead>
+      <tr>
+        <th><h3>Skill<h3></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Organizational skills</strong></td>
+        <td><strong>Publicatons</strong></td>
+        <td><strong>Projects</strong></td>
+      </tr>
+      <tr>
+        <td><%= @skill.organizational_skill %></td>
+        <td><%= @skill.publicaton %></td>
+        <td><%= @skill.project %></td>
+      </tr>
+    </tbody>
+  </table>
+  <%= link_to 'Edit', edit_profile_skill_path(current_profile, @skill)  %> |
+	<%= link_to 'Back', profile_skills_path(current_profile) %>
+</div>

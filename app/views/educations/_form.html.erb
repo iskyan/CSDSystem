@@ -1,32 +1,31 @@
-<%= form_for([current_profile,education]) do |f| %>
-  <% if education.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(education.errors.count, "error") %> prohibited this education from being saved:</h2>
-
-      <ul>
-      <% education.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="container content" style="height: 500px;">
+  <%= form_for([current_profile,education]) do |f| %>
+    <% if education.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(education.errors.count, "error") %> prohibited this education from being saved: </h2>
+        <ul>
+          <% education.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <table>
+      <tr>
+        <td><%= f.label :education_period %>: </td>
+        <td><%= f.text_field :education_period %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :education_type %>: </td>
+        <td><%= f.text_field :education_type %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :faculty %>: </td>
+        <td><%= f.text_field :faculty %></td>
+      </tr>
+    </table>
+    <div class="actions">
+      <%= f.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :education_period %>
-    <%= f.text_field :education_period %>
-  </div>
-
-  <div class="field">
-    <%= f.label :education_type %>
-    <%= f.text_field :education_type %>
-  </div>
-
-  <div class="field">
-    <%= f.label :faculty %>
-    <%= f.text_field :faculty %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

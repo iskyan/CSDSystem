@@ -1,213 +1,198 @@
-<div class="container">
-
-  <div class="col-md-4">
-        <h3>About me</h3>
-      <p>
-        <strong>Your face</strong>
-        <%= image_tag @profile.profile_image.url(:thumb)if @profile.profile_image? %>
-      </p>
-
-      <p>
-        <strong>username:</strong>
-        <%= @profile.username %>
-      </p>
-
-      <p>
-        <strong>name:</strong>
-        <%= @profile.name %>
-      </p>
-
-      <p>
-        <strong>suname:</strong>
-        <%= @profile.surname %>
-      </p>
-
-
-      <p>
-        <strong>Group:</strong>
-        <%= Group.find(current_profile.group_id).name if current_profile.group_id? %>
-      </p>
-
-
-      <p>
-        <strong>email:</strong>
-        <%= @profile.email %>
-      </p>
-
-      <p>
-        <strong>address:</strong>
-        <%= @profile.address %>
-      </p>
-
-      <p>
-        <strong>phone:</strong>
-        <%= @profile.phone %>
-      </p>
-
-      <p>
-        <strong>date of birth:</strong>
-        <%= @profile.date_of_birth %>
-      </p>
-
-      <p>
-        <strong>gender:</strong>
-        <%= @profile.gender %>
-      </p>
-
-      <% if current_profile==@profile %>
-
-          <h3>Edit your profile</h3>
-          <%= link_to "Edit your profile" , edit_profile_path(@profile) %>
-      <% end %>
-  </div>
-
-
-  <div class="col-md-4">
-    <h3>My Work Experiences</h3>
-    <table>
-      <thead>
+<div class="container content">
+  <h1 style="text-align: center;">Profile</h1>
+  <div class="row">
+    <div class="col-sm-2 col-xs-12">
+      <%= image_tag @profile.profile_image.url(:thumb)if @profile.profile_image? %>
+    </div>
+    <div class="col-sm-9 col-xs-10">
+      <table>
         <tr>
-          <th>Work period</th>
-          <th>Position</th>
-          <th>Place</th>
-          <th>Profile</th>
-          <th colspan="3"></th>
+          <td><strong>Name: </strong></td>
+          <td><%= @profile.name %></td>
         </tr>
-      </thead>
-
-      <tbody>
-        <% @profile.work_experiences.each do |work_experience| %>
+        <tr>
+          <td><strong>Surname: </strong></td>
+          <td><%= @profile.surname %></td>
+        </tr>
+        <tr>
+          <td><strong>Group: </strong></td>
+          <td><%= Group.find(current_profile.group_id).name if current_profile.group_id? %></td>
+        </tr>
+        <tr>
+          <td><strong>E-mail: </strong></td>
+          <td><%= @profile.email %></td>
+        </tr>
+        <tr>
+          <td><strong>Address: </strong></td>
+          <td><%= @profile.email %></td>
+        </tr>
+        <tr>
+          <td><strong>Phone: </strong></td>
+          <td><%= @profile.phone %></td>
+        </tr>
+        <tr>
+          <td><strong>Date of Birth: </strong></td>
+          <td><%= @profile.date_of_birth %></td>
+        </tr>
+        <tr>
+          <td><strong>Gender:</strong></td>
+          <td><%= @profile.gender %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-sm-1 col-xs-2">
+      <%= link_to "Create CV" , profile_path(current_profile, format: 'pdf'), class: "btn btn-info" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-xs-12">
+      <table>
+        <thead>
           <tr>
-            <td><%= work_experience.profile.username %></td>
-            <td><%= work_experience.work_period %></td>
-            <td><%= work_experience.position %></td>
-            <td><%= work_experience.place %></td>
+            <th><h3>Work Experiences<h3></th>
+            <th><%= link_to "Work experiences", profile_work_experiences_path(current_profile), class: "btn btn-warning" %></th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          <% @profile.work_experiences.each do |work_experience| %>
+            <tr>
+              <td>Work period: </td>
+              <td><%= work_experience.work_period %></td>
+            </tr>
+            <tr>
+              <td>Position: </td>
+              <td><%= work_experience.position %></td>
+            </tr>
+            <tr>
+              <td>Place: </td>
+              <td><%= work_experience.place %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-sm-6 col-xs-12">
+      <table>
+        <thead>
+          <tr>
+            <th><h3>Educations</h3></th>
+            <th><%= link_to "Educations" , profile_educations_path(current_profile, @educations), class: "btn btn-warning" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @profile.educations.each do |education| %>
+            <tr>
+              <td>Education period: </td>
+              <td><%= education.education_period %></td>
+            </tr>
+            <tr>
+              <td>Education type: </td>
+              <td><%= education.education_type %></td>
+            </tr>
+            <tr>
+              <td>Faculty: </td>
+              <td><%= education.faculty %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
-
-<div class="col-md-4">
-  <h3>Profesionals skill</h3>
-  <table>
-    <thead>
-      <tr>
-        <th>Professional skill list</th>
-        <th>Skill level</th>
-        <th>Profile</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @profile.professional_skills.each do |professional_skill| %>
-        <tr>
-          <td><%= professional_skill.professional_skill_list.prof_skill %></td>
-          <td><%= professional_skill.skill_level.level %></td>
-          <td><%= professional_skill.profile.username %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-</div>
-
-<div class="col-md-4">
-  <h1>Skills</h1>
-
-      <% if @profile.skill!=nil %>
-      <% @skill = @profile.skill %>
-      <tr>
-        <td><%= @skill.organizational_skill %></td>
-        <td><%= @skill.publicaton %></td>
-        <td><%= @skill.project %></td>
-      </tr>
-      <% end %>
-
-</div>
-
-<div class="col-md-4">
-  <h3>My languages</h3>
-  <table>
-    <thead>
-      <tr>
-        <th>Language</th>
-        <th>Skill level</th>
-        <th>Profile</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @profile.languages.each do |language| %>
-        <tr>
-          <td><%= language.language %></td>
-              <% @sl = language.skill_level %>
-          <td><%= @sl.level %></td>
-          <td><%= language.profile.username %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
-
-
-<div class="col-md-4">
-  <h3>My Educations</h3>
-
-
-  <table>
-    <thead>
-      <tr>
-        <th>Education period</th>
-        <th>Education type</th>
-        <th>Faculty</th>
-        <th>Profile</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @profile.educations.each do |education| %>
-        <tr>
-          <td><%= education.education_period %></td>
-          <td><%= education.education_type %></td>
-          <td><%= education.faculty %></td>
-          <td><%= education.profile.username %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-</div>
-
-<div class="col-md-4">
-
-  <h1>My Computer Skills</h1>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Computer skill list</th>
-        <th>Skill level</th>
-        <th>Profile</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @profile.computer_skills.each do |computer_skill| %>
-        <tr>
-          <td><%= computer_skill.computer_skill_list.comp_skill %></td>
-          <td><%= computer_skill.skill_level.level %></td>
-          <td><%= computer_skill.profile.username %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-
-</div>
-
+  <div class="row">
+    <div class="col-sm-6 col-xs-12">
+      <table>
+        <thead>
+          <tr>
+            <th><h3>Profesional skills</h3></th>
+            <th><%= link_to "Professional Skills" , profile_professional_skills_path(current_profile,@professional_skills), class: "btn btn-warning" %></th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td><strong>Skill</strong></td>
+              <td><strong>Skill level</strong></td>
+            </tr>
+            <% @profile.professional_skills.each do |professional_skill| %>
+            <tr>
+              <td><%= professional_skill.professional_skill_list.prof_skill %></td>
+              <td><%= professional_skill.skill_level.level %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-sm-6 col-xs-12">
+      <table>
+        <thead>
+          <tr>
+            <th><h3>Computer skills</h3></th>
+            <th><%= link_to "Computer Skills" , profile_computer_skills_path(current_profile,@pcomputer_skills), class: "btn btn-warning" %></th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td><strong>Skill</strong></td>
+              <td><strong>Skill level</strong></td>
+            </tr>
+            <% @profile.computer_skills.each do |computer_skill| %>
+            <tr>
+              <td><%= computer_skill.computer_skill_list.comp_skill %></td>
+              <td><%= computer_skill.skill_level.level %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 col-xs-12">
+      <table>
+        <thead>
+          <tr>
+            <th><h3>Skills</h3></th>
+            <th><%= link_to "Skills" , profile_skills_path(current_profile), class: "btn btn-warning" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if @profile.skill!=nil %>
+            <% @skill = @profile.skill %>
+            <tr>
+              <td>Organizational Skills: </td>
+              <td><%= @skill.organizational_skill %></td>
+            </tr>
+            <tr>
+              <td>Publications: </td>
+              <td><%= @skill.publicaton %></td>
+            </tr>
+            <tr>
+              <td>Projects: </td>
+              <td><%= @skill.project %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-sm-6 col-xs-12">
+      <table>
+        <thead>
+          <tr>
+            <th><h3>languages</h3></th>
+            <th><%= link_to "Languages" , profile_languages_path(current_profile,@language), class: "btn btn-warning" %></th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td><strong>Language</strong></td>
+              <td><strong>Skill level</strong></td>
+            </tr>
+            <% @profile.languages.each do |language| %>
+            <tr>
+              <td><%= language.language %></td>
+              <td><%= language.skill_level.level %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

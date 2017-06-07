@@ -1,31 +1,27 @@
+<div class="container content" style="height: 500px;">
+  <p id="notice"><%= notice %></p>
 
-<h1>Languages</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Language</th>
-      <th>Skill level</th>
-      <th>Profile</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% current_profile.languages.each do |language| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= language.language %></td>
-            <% @sl = language.skill_level %>
-        <td><%= @sl.level %></td>
-        <td><%= language.profile.username %></td>
-        <td><%= link_to 'Edit', edit_profile_language_path(current_profile,language) %></td>
-        <td><%= link_to 'Show', profile_language_path(current_profile,language) %></td>
-        <td><%= link_to 'Destroy', profile_language_path(current_profile,language), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th><h3>Languages<h3></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Language', new_profile_language_path %>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Language</strong></td>
+        <td><strong>Skill level</strong></td>
+      </tr>
+      <% current_profile.languages.each do |language| %>
+        <tr>
+          <td><%= language.language %></td>
+          <td><%= language.skill_level.level %></td>
+          <td><%= link_to 'Show', profile_language_path(current_profile,language) %></td>
+          <td><%= link_to 'Edit', edit_profile_language_path(current_profile,language) %></td>
+          <td><%= link_to 'Destroy', profile_language_path(current_profile,language), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'New Language', new_profile_language_path %>
+</div>

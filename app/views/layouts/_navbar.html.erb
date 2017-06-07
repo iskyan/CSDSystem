@@ -88,14 +88,15 @@
               <form lang="en" action="" class="navbar-right">
                  <p class="lang-btn" ><%= link_to_unless_current "EN", locale: "en" %></p>
                  <p class="lang-btn" ><%= link_to_unless_current "RU", locale: "ru" %></p>
-
-                 <% if profile_signed_in? %>
-                 <p> <%= link_to "Dashboard",   profile_dashboard_path   %>  </p>
-                 <p> <%= link_to  "Logout", destroy_profile_session_path , method: :delete , class: "btn btn-warning navbar-right login-btn", locale: "en" %> </p>
+              </form>
+              <div class="login">
+                <% if profile_signed_in? %>
+                 <p> <%= link_to "Dashboard",  profile_dashboard_path, class: "btn btn-info navbar-right login-btn" %>  </p>
+                 <p> <%= link_to  "Logout", destroy_profile_session_path , method: :delete , class: "btn btn-danger navbar-right login-btn", locale: "en" %> </p>
                  <% else %>
                  <p> <%= link_to  "Login", new_profile_session_path , class:"btn btn-success navbar-right login-btn", locale: "en" %> </p>
                  <% end %>
-              </form>
+              </div>
            </div>
        </div>
    </div>

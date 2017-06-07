@@ -1,31 +1,27 @@
-<p id="notice"><%= notice %></p>
+<div class="container content" style="height: 500px;">
+  <p id="notice"><%= notice %></p>
 
-<h1>Professional Skills</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Professional skill list</th>
-      <th>Skill level</th>
-      <th>Profile</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% current_profile.professional_skills.each do |professional_skill| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= professional_skill.professional_skill_list.prof_skill %></td>
-        <td><%= professional_skill.skill_level.level %></td>
-        <td><%= professional_skill.profile.username %></td>
-        <td><%= link_to 'Show', profile_professional_skill_path(current_profile,professional_skill) %></td>
-        <td><%= link_to 'Edit', edit_profile_professional_skill_path(current_profile,professional_skill) %></td>
-        <td><%= link_to 'Destroy', profile_professional_skill_path(current_profile,professional_skill), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th><h3>Professional Skills<h3></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Professional Skill', new_profile_professional_skill_path(current_profile,@professional_skill) %>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Skill list</strong></td>
+        <td><strong>Skill level</strong></td>
+      </tr>
+      <% current_profile.professional_skills.each do |professional_skill| %>
+        <tr>
+          <td><%= professional_skill.professional_skill_list.prof_skill %></td>
+          <td><%= professional_skill.skill_level.level %></td>
+          <td><%= link_to 'Show', profile_professional_skill_path(current_profile,professional_skill) %></td>
+          <td><%= link_to 'Edit', edit_profile_professional_skill_path(current_profile,professional_skill) %></td>
+          <td><%= link_to 'Destroy', profile_professional_skill_path(current_profile,professional_skill), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'New Professional Skill', new_profile_professional_skill_path(current_profile,@professional_skill) %>
+</div>

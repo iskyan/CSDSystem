@@ -1,19 +1,21 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Computer skill list:</strong>
-  <%= @computer_skill.computer_skill_list.comp_skill %>
-</p>
-
-<p>
-  <strong>Skill level:</strong>
-  <%= @computer_skill.skill_level.level %>
-</p>
-
-<p>
-  <strong>Profile:</strong>
-  <%= @computer_skill.profile.username %>
-</p>
-
-<%= link_to 'Edit', edit_profile_computer_skill_path(current_profile,@computer_skill) %> |
-<%= link_to 'Back', profile_computer_skills_path %>
+<div class="container content" style="height: 500px;">
+  <table>
+    <thead>
+      <tr>
+        <th><h3>Computer Skill<h3></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Skill list</strong></td>
+        <td><strong>Skill level</strong></td>
+      </tr>
+      <tr>
+        <td><%= @computer_skill.computer_skill_list.comp_skill %></td>
+        <td><%= @computer_skill.skill_level.level %></td>
+      </tr>
+    </tbody>
+  </table>
+  <%= link_to 'Edit', edit_profile_computer_skill_path(current_profile,@computer_skill) %> |
+	<%= link_to 'Back', profile_computer_skills_path %>
+</div>
