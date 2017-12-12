@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 20170527062551) do
     t.string   "username"
     t.string   "name"
     t.string   "surname"
-    t.string   "email",                  default: "your@email.com"
+    t.string   "email"
     t.string   "address"
     t.string   "phone"
     t.string   "profile_image"
@@ -93,17 +93,17 @@ ActiveRecord::Schema.define(version: 20170527062551) do
     t.string   "gender"
     t.integer  "profile_role_id"
     t.integer  "group_id"
-    t.string   "encrypted_password",     default: "",               null: false
+    t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,                null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                                        null: false
-    t.datetime "updated_at",                                        null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_profiles_on_email"
     t.index ["group_id"], name: "index_profiles_on_group_id"
     t.index ["profile_role_id"], name: "index_profiles_on_profile_role_id"

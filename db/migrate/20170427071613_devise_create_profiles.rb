@@ -15,7 +15,7 @@ class DeviseCreateProfiles < ActiveRecord::Migration[5.0]
       t.references :profile_role
       t.references :group, foreign_key: true
       ## Database authenticatable
-      t.string :email,
+      t.string :email
       t.string :encrypted_password, null: false, default: ""
 
       ## Recoverable
