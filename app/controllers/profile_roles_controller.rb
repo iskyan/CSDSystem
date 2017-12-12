@@ -69,10 +69,7 @@ class ProfileRolesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_role_params
-<<<<<<< HEAD
       params.require(:profile_role).permit(:role)
-=======
       params.fetch(:profile_role, {})
->>>>>>> master
     end
 end
