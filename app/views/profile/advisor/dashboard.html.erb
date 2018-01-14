@@ -1,37 +1,22 @@
-<div class="container-fluid">
-    <h1>Welcome Advisor</h1>
-
-    <h3>
-      You are:      <%= current_profile.username %>
-      <br/>
-      <%= current_profile.profile_role.role %>
-    </h3>
-
-</div>
-
-
-<div class="container-fluid">
-
-<div class="row">
-
-  <div class="col-md-4">
-      <table>
-        <thead>
-          <tr>
-            <th>groups</th>
-          </tr>
-        </thead>
-        <tbody>
+<br>
+<div class="container content" style="height: 500px;">
+  <div class="row">
+    <table>
+      <thead>
+        <tr>
+          <th>Groups</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if @group != nil %>
           <% @groups.each do |group| %>
             <tr>
               <td><%= group.name %></td>
               <td><%= link_to 'Show group students', profile_students_path(:id => group.id) %></td>
             </tr>
           <% end %>
-        </tbody>
-      </table>
+        <% end %>
+      </tbody>
+    </table>
   </div>
-
-</div>
-
 </div>

@@ -1,61 +1,45 @@
-<%= form_for (@profile),html: {multipart: true} do |f| %>
-
-  <div>
-    <%= f.file_field :profile_image %>
-
-  </div>
-
-
-  <div class="field">
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-  </div>
-
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :surname %>
-    <%= f.text_field :surname %>
-  </div>
-
-  <div class="field">
-    <%= f.label :group_id %><br />
-    <%= f.collection_select :group_id, Group.order(:id), :id, :name, include_blank: true %>
+<div class="container content">
+  <%= form_for (@profile),html: {multipart: true} do |f| %>
+    <div>
+      <%= image_tag current_profile.profile_image.url(:thumb) if current_profile.profile_image? %>
+      <%= f.file_field :profile_image %>
     </div>
-
-
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-  </div>
-
-  <div class="field">
-    <%= f.label :phone %>
-    <%= f.text_field :phone %>
-  </div>
-
-  <div class="field">
-    <%= f.label :date_of_birth %>
-    <%= f.text_field :date_of_birth %>
-  </div>
-
-  <div class="field">
-    <%= f.label :gender %>
-    <%= f.text_field :gender %>
-  </div>
-
-
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-
-<% end %>
+    <table>
+      <tr>
+        <td><%= f.label :name %>: </td>
+        <td><%= f.text_field :name %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :surname %>: </td>
+        <td><%= f.text_field :name %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :group_id %>: </td>
+        <td><%= f.collection_select :group_id, Group.order(:id), :id, :name, include_blank: true %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :email %>: </td>
+        <td><%= f.text_field :email %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :address %>: </td>
+        <td><%= f.text_field :address %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :phone %>: </td>
+        <td><%= f.text_field :phone %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :date_of_birth %>: </td>
+        <td><%= f.text_field :date_of_birth %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :gender %>: </td>
+        <td><%= f.text_field :gender %></td>
+      </tr>
+    </table>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>

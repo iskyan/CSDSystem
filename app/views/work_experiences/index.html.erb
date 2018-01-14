@@ -1,33 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="container content" style="height: 500px;">
+  <p id="notice"><%= notice %></p>
 
-<h1>Work Experiences</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Work period</th>
-      <th>Position</th>
-      <th>Place</th>
-      <th>Profile</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @work_experiences.each do |work_experience| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= work_experience.profile.username %></td>
-        <td><%= work_experience.work_period %></td>
-        <td><%= work_experience.position %></td>
-        <td><%= work_experience.place %></td>
-        <td><%= link_to 'Show', profile_work_experience_path(current_profile, work_experience) %></td>
-        <td><%= link_to 'Edit', edit_profile_work_experience_path(current_profile, work_experience) %></td>
-        <td><%= link_to 'Destroy', profile_work_experience_path(current_profile, work_experience), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th><h3>Work Experiences<h3></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Work Experience', new_profile_work_experience_path %>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Work period</strong></td>
+        <td><strong>Position</strong></td>
+        <td><strong>Place</strong></td>
+      </tr>
+      <% @work_experiences.each do |work_experience| %>
+        <tr>
+          <td><%= work_experience.work_period %></td>
+          <td><%= work_experience.position %></td>
+          <td><%= work_experience.place %></td>
+          <td><%= link_to 'Show', profile_work_experience_path(current_profile, work_experience) %></td>
+          <td><%= link_to 'Edit', edit_profile_work_experience_path(current_profile, work_experience) %></td>
+          <td><%= link_to 'Destroy', profile_work_experience_path(current_profile, work_experience), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'New Work Experience', new_profile_work_experience_path %>
+</div>

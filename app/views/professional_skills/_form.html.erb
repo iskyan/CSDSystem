@@ -1,22 +1,27 @@
-<%= form_for [current_profile,@professional_skill] do |f| %>
-  <% if professional_skill.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(professional_skill.errors.count, "error") %> prohibited this professional_skill from being saved:</h2>
-
-      <ul>
-      <% professional_skill.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="container content" style="height: 500px;">
+  <%= form_for [current_profile,@professional_skill] do |f| %>
+    <% if professional_skill.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(professional_skill.errors.count, "error") %> prohibited this professional_skill from being saved: </h2>
+        <ul>
+          <% professional_skill.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <table>
+      <tr>
+        <td><%= f.label :professional_skill_list_id %>: </td>
+        <td><%= f.collection_select :professional_skill_list_id, ProfessionalSkillList.order(:prof_skill), :id, :prof_skill, include_blank: true %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :skill_level_id %>: </td>
+        <td><%= f.collection_select :skill_level_id, SkillLevel.order(:id), :id, :level, include_blank: true %></td>
+      </tr>
+    </table>
+    <div class="actions">
+      <%= f.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-  <%= f.label :professional_skill_list_id %><br />
-  <%= f.collection_select :professional_skill_list_id, ProfessionalSkillList.order(:prof_skill), :id, :prof_skill, include_blank: true %>
-   <%= f.label :skill_level_id %><br />
-  <%= f.collection_select :skill_level_id, SkillLevel.order(:id), :id, :level, include_blank: true %>
-  <div class="actions"><%= f.submit %></div>
-
 </div>
-<% end %>

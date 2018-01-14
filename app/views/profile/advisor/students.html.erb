@@ -1,41 +1,20 @@
-<div class="container-fluid">
-    <%= @groupmates %>
-    <h1>It works.Welcome Advisor</h1>
-
-    <h3>
-      You are:      <%= current_profile.username %>
-      <br/>
-      <%= current_profile.profile_role.role %>
-    </h3>
-
-</div>
-
-
-<div class="container-fluid">
-
-<div class="row">
-
-  <div class="col-md-4">
-      <table>
-        <thead>
+<div class="container content" style="height: 500px;">
+  <div class="row">
+    <table>
+      <thead>
+        <tr>
+          <th>Students in thes group</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @students.each do |student| %>
           <tr>
-            <th>Students in this group</th>
+            <td><%= student.name %></td>
+            <td><%= student.username %></td>
+            <td><%= link_to 'Show Profile', profile_path(student) %></td>
           </tr>
-        </thead>
-        <tbody>
-          <% @students.each do |student| %>
-            <tr>
-              <td><%= student.name %></td>
-              <br>
-              <td><%= student.username %></td>
-              <br>
-              <td><%= link_to 'Show Profile', profile_path(student) %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+        <% end %>
+      </tbody>
+    </table>
   </div>
-
-</div>
-
 </div>

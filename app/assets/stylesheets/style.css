@@ -5,6 +5,9 @@ body {
 div {
    display: block;
 }
+th, td {
+    padding: 5px;
+}
 .navbar {
    background-color: #d8dfea;
 }
@@ -66,24 +69,25 @@ div {
    margin-left: -40px;
 }
 .con-car {
-   margin-top: 160px;
+   margin-top: 100px;
 }
 .content{
-   margin-top: 150px;
+   margin-top: 100px;
 }
 .row-content {
    margin-bottom: 50px;
 }
 .par-content {
-   margin-bottom: 150px;
+   margin-bottom: 100px;
 }
 .footer {
-   position: static;
+   position: relative;
    height:50px;
    background-color: #2a415f;
    bottom:0px;
    left:0px;
    right:0px;
+   margin-top: 50px;
    margin-bottom:0px;
    color: aliceblue;
 }
@@ -192,3 +196,11 @@ div {
   opacity: 0.6;
   transition: opacity ease 0.5s;
 } 
+.login{
+  position: relative;
+  right:3%;
+  top: 0%;
+}
+.field {
+  margin: 5px;
+}

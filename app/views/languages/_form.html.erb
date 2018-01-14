@@ -1,21 +1,27 @@
-<%= form_for [current_profile,@language] do |f| %>
-  <% if language.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(language.errors.count, "error") %> prohibited this education from being saved:</h2>
-
-      <ul>
-      <% language.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="container content" style="height: 500px;">
+  <%= form_for [current_profile,@language] do |f| %>
+    <% if language.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(language.errors.count, "error") %> prohibited this education from being saved: </h2>
+        <ul>
+          <% language.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <table>
+      <tr>
+        <td><%= f.label :language %>: </td>
+        <td><%= f.text_field :language %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :skill_level_id %>: </td>
+        <td><%= f.collection_select :skill_level_id, SkillLevel.order(:id), :id, :level, include_blank: true %></td>
+      </tr>
+    </table>
+    <div class="actions">
+      <%= f.submit %>
     </div>
   <% end %>
-
- 	
- <%= f.text_field :language %><br />
-  <%= f.label :skill_level_id %><br />
-  <%= f.collection_select :skill_level_id, SkillLevel.order(:id), :id, :level, include_blank: true %>
-
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

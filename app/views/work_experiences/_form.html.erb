@@ -1,32 +1,31 @@
-<%= form_for([current_profile, work_experience]) do |f| %>
-  <% if work_experience.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(work_experience.errors.count, "error") %> prohibited this work_experience from being saved:</h2>
-
-      <ul>
-      <% work_experience.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="container content" style="height: 500px;">
+  <%= form_for ([current_profile, work_experience]) do |f| %>
+    <% if work_experience.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(work_experience.errors.count, "error") %> prohibited this work_experience from being saved:</h2>
+        <ul>
+          <% work_experience.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <table>
+      <tr>
+        <td><%= f.label :work_period %>: </td>
+        <td><%= f.text_field :work_period %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :position %>: </td>
+        <td><%= f.text_field :position %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :place %>: </td>
+        <td><%= f.text_field :place %></td>
+      </tr>
+    </table>
+    <div class="actions">
+      <%= f.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :work_period %>
-    <%= f.text_field :work_period %>
-  </div>
-
-  <div class="field">
-    <%= f.label :position %>
-    <%= f.text_field :position %>
-  </div>
-
-  <div class="field">
-    <%= f.label :place %>
-    <%= f.text_field :place %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

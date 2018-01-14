@@ -1,84 +1,51 @@
-<div class="container-fluid">
-
-
-<div class="col-md-4">
-    <h1>Dashboard</h1>
-
-    <h3>
-      username:
-      <%= current_profile.username %>
-    </h3>
-
-    <h3>
-      role:
-      <%= current_profile.profile_role_id %>
-      <br/>
-      <%= current_profile.profile_role.role %>
-    </h3>
-  </div>
-
-<div class="col-md-4">
-  <p>
-    <strong>Groups</strong>
-    <%= link_to "group", profile_groups_path(current_profile, @group) %>
-  </p>
-  </div>
-
-
-<div class="col-md-4">
-<p>
-  <strong>Your face</strong>
-  <%= image_tag current_profile.profile_image.url(:thumb) if current_profile.profile_image? %>
-</p>
-</div>
-
-
-  <div class="col-md-4">
-    <h3>profile</h3>
-    <%= link_to "profile" , profile_path(current_profile) %>
-  </div>
-
-  <div class="col-md-4">
-    <h3>One Skill</h3>
-    <%= link_to "My Skill" , profile_skills_path(current_profile) %>
-  </div>
-
-  <div class="col-md-4">
-    <h3>Languages</h3>
-    <%= link_to "Languages" , profile_languages_path(current_profile,@language) %>
-  </div>
-
-  <div class="col-md-4">
-    <h3>Professional Skills</h3>
-    <%= link_to "Professional Skills" , profile_professional_skills_path(current_profile,@professional_skills) %>
-  </div>
-
-
-  <div class="col-md-4">
-    <h3>Computer Skills</h3>
-    <%= link_to "Computer Skills" , profile_computer_skills_path(current_profile,@pcomputer_skills) %>
-  </div>
-
-
-  <div class="col-md-4">
-    <h3>My educations</h3>
-    <%= link_to "My Educations" , profile_educations_path(current_profile, @educations)  %>
-  </div>
-
-  <div class="col-md-4">
-    <h3>Create Cv</h3>
-    <%= link_to "Create Cv" , profile_path(current_profile, format: 'pdf')  %>
-  </div>
-
-
-
-  <div class="col-md-4">
-    <h3>Work Experience</h3>
-    <div class="">
-      <%= link_to "My work experiences", profile_work_experiences_path(current_profile) %>
-
+<br>
+<div class="container content" style="height: 500px;">
+  <div class="row">
+    <div class="col-sm-2 col-xs-12">
+      <%= image_tag current_profile.profile_image.url(:thumb) if current_profile.profile_image? %>
     </div>
-
+    <div class="col-sm-7 col-xs-12">
+      <% @profile = current_profile %>
+      <table>
+        <tr>
+          <td><strong>Name: </strong></td>
+          <td><%= @profile.name %></td>
+        </tr>
+        <tr>
+          <td><strong>Surname: </strong></td>
+          <td><%= @profile.surname %></td>
+        </tr>
+        <tr>
+          <td><strong>Group: </strong></td>
+          <td><%= Group.find(current_profile.group_id).name if current_profile.group_id? %></td>
+        </tr>
+        <tr>
+          <td><strong>E-mail: </strong></td>
+          <td><%= @profile.email %></td>
+        </tr>
+        <tr>
+          <td><strong>Address: </strong></td>
+          <td><%= @profile.email %></td>
+        </tr>
+        <tr>
+          <td><strong>Phone: </strong></td>
+          <td><%= @profile.phone %></td>
+        </tr>
+        <tr>
+          <td><strong>Date of Birth: </strong></td>
+          <td><%= @profile.date_of_birth %></td>
+        </tr>
+        <tr>
+          <td><strong>Gender:</strong></td>
+          <td><%= @profile.gender %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-sm-3 col-xs-12">
+      <% if current_profile==@profile %>
+        <%= link_to "Edit" , edit_profile_path(@profile), class: "btn btn-warning" %>
+      <% end %>
+      <%= link_to "Profile" , profile_path(current_profile), class: "btn btn-info" %>
+    </div>
   </div>
-
 </div>
